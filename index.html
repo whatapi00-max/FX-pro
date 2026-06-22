@@ -291,7 +291,7 @@
       background: none; border-bottom: 2px solid transparent;
       transition: all 0.2s;
     }
-    .market-tab.active { color: #fff; border-bottom-color: var(--blue); font-weight: 700; }
+    .market-tab.active { color: #000; background: #fff; border-bottom-color: var(--blue); font-weight: 700; }
     .market-tab sup { font-size: 8px; color: var(--blue); vertical-align: super; }
 
     .ticker-wrapper { overflow: hidden; position: relative; }
@@ -300,17 +300,17 @@
     }
     .ticker-list::-webkit-scrollbar { display: none; }
     .ticker-item {
-      display: flex; align-items: center; gap: 8px;
-      padding: 10px 14px; cursor: pointer; border-right: 1px solid #1a1a2e;
-      min-width: 150px; flex-shrink: 0;
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 10px; cursor: pointer; border-right: 1px solid #1a1a2e;
+      min-width: 120px; flex-shrink: 0;
     }
     .ticker-item:hover { background: rgba(255,255,255,0.05); }
     .ticker-arrow { font-size: 11px; font-weight: 700; }
     .ticker-arrow.up { color: var(--green); }
     .ticker-arrow.down { color: var(--red); }
-    .ticker-name { font-size: 12px; font-weight: 700; color: #fff; }
-    .ticker-prices { font-size: 11px; color: #aab8d0; }
-    .ticker-spread { font-size: 10px; color: #6c7a99; margin-top: 1px; }
+    .ticker-name { font-size: 11px; font-weight: 700; color: #fff; }
+    .ticker-prices { font-size: 10px; color: #aab8d0; }
+    .ticker-spread { font-size: 9px; color: #6c7a99; margin-top: 1px; }
 
     /* ===== EXPERIENCE SECTION ===== */
     .experience-section { padding: 32px 0 36px; background: #000; width: 100%; }
@@ -323,17 +323,22 @@
     .account-types { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
     .account-types::-webkit-scrollbar { display: none; }
     .account-card {
-      border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px;
-      min-width: 200px; flex-shrink: 0;
+      border: 1px solid #e5e5e5; border-radius: 8px; padding: 6px;
+      min-width: 120px; flex-shrink: 0;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      transition: all 0.2s ease;
     }
-    .account-card.featured { border-color: var(--blue); box-shadow: 0 2px 12px rgba(0,102,255,0.2); }
-    .account-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-    .account-card .type-label { font-size: 10px; color: var(--blue); font-weight: 600; text-transform: uppercase; margin-bottom: 10px; }
-    .account-card p { font-size: 11px; color: #666; margin-bottom: 12px; }
+    .account-card.featured { border-color: var(--blue); background: linear-gradient(135deg, #fff 0%, #f8fbff 100%); box-shadow: 0 2px 8px rgba(0,102,255,0.15), 0 1px 3px rgba(0,0,0,0.08); }
+    .account-card h3 { font-size: 11px; font-weight: 700; margin-bottom: 1px; color: #111; letter-spacing: 0.2px; }
+    .account-card .type-label { font-size: 7px; color: var(--blue); font-weight: 600; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px; }
+    .account-card p { font-size: 8px; color: #666; margin-bottom: 6px; line-height: 1.2; }
     .account-card .btn-open {
-      background: var(--blue); color: #fff; padding: 8px 16px;
-      border-radius: 4px; font-size: 12px; font-weight: 600;
-      display: inline-block;
+      background: linear-gradient(135deg, var(--blue) 0%, #0052cc 100%); color: #fff; padding: 3px 6px;
+      border-radius: 4px; font-size: 9px; font-weight: 600;
+      display: inline-block; border: none;
+      cursor: pointer; transition: all 0.2s ease;
+      box-shadow: 0 1px 2px rgba(0,102,255,0.2);
     }
 
     /* ===== TRADE ON MOBILE ===== */
@@ -485,10 +490,10 @@
       .market-tabs { flex-wrap: wrap; }
       .market-tab { padding: 12px 20px; font-size: 13px; }
       .ticker-list { flex-wrap: wrap; }
-      .ticker-item { min-width: 180px; }
+      .ticker-item { min-width: 140px; padding: 10px 14px; }
       .experience-section h2 { font-size: 24px; }
       .account-types { justify-content: flex-start; }
-      .account-card { min-width: 280px; }
+      .account-card { min-width: 150px; padding: 8px; }
       .mobile-section .container { display: flex; align-items: center; gap: 40px; }
       .mobile-section-content { flex: 1; }
       .mobile-app-img { max-width: 320px; margin: 0; }
@@ -522,10 +527,10 @@
       .hero-subtitle { font-size: 14px; }
       .market-section { width: 100%; }
       .market-tab { padding: 14px 22px; font-size: 14px; }
-      .ticker-item { min-width: 200px; padding: 14px 20px; }
+      .ticker-item { min-width: 160px; padding: 12px 18px; }
       .experience-section { width: 100%; }
       .experience-section h2 { font-size: 30px; }
-      .account-card { min-width: 320px; padding: 24px; }
+      .account-card { min-width: 180px; padding: 10px; }
       .mobile-section { width: 100%; }
       .mobile-app-img { max-width: 420px; }
       .stats-section { width: 100%; padding: 60px 16px; }
