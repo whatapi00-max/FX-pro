@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fx777 – The World's No.1 Online Forex Broker</title>
+  <link rel="icon" href="https://www.fxpro.com/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #0066ff;
+      --dark-blue: #001e5a;
+      --black: #000;
+      --white: #fff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #ccc;
+      --gray-text: #666;
+      --red: #e03030;
+      --green: #00b050;
+      --font: 'Inter', sans-serif;
+    }
+
+    html, body { width: 100%; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: #fff; color: #111; font-size: 14px; overflow-x: hidden; padding-bottom: 62px; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul, ol { list-style: none; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    @keyframes slideIn {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 5px rgba(0,102,255,0.3); }
+      50% { box-shadow: 0 0 20px rgba(0,102,255,0.6); }
+    }
+
+    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+    .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+    .animate-pulse { animation: pulse 2s ease-in-out infinite; }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    .animate-glow { animation: glow 2s ease-in-out infinite; }
+
+    /* Image hover effects */
+    img { transition: transform 0.3s ease, filter 0.3s ease; }
+    img:hover { transform: scale(1.02); filter: brightness(1.05); }
+    .mobile-app-img { transition: transform 0.4s ease; }
+    .mobile-app-img:hover { transform: scale(1.05) rotate(2deg); }
+
+    /* Button hover animations */
+    .btn-primary, .btn-secondary, .btn-register, .btn-open, .btn-trade, .app-banner-install {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary:hover, .btn-register:hover, .btn-open:hover, .btn-trade:hover, .app-banner-install:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,102,255,0.4);
+    }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.1);
+    }
+    .btn-primary::before, .btn-register::before, .btn-open::before, .btn-trade:hover::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    .btn-primary:hover::before, .btn-register:hover::before, .btn-open:hover::before {
+      left: 100%;
+    }
+
+    /* Card hover effects */
+    .account-card, .stat-card, .instrument-item {
+      transition: all 0.3s ease;
+    }
+    .account-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,102,255,0.25);
+    }
+    .stat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .instrument-item:hover {
+      background: #f8f9ff;
+      border-color: var(--blue);
+    }
+
+    /* Ticker item hover */
+    .ticker-item {
+      transition: all 0.2s ease;
+    }
+    .ticker-item:hover {
+      background: #e8f0ff;
+      transform: scale(1.02);
+    }
+
+    /* Tab hover animation */
+    .market-tab {
+      transition: all 0.2s ease;
+    }
+    .market-tab:hover {
+      background: #f5f5f5;
+    }
+
+    /* Hero text animation */
+    .hero-title {
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    .hero-subtitle {
+      animation: fadeInUp 0.6s ease-out both;
+    }
+    .hero-btns {
+      animation: fadeInUp 0.6s ease-out 0.4s both;
+    }
+
+    /* Scroll reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stats number animation */
+    .stat-card-number {
+      transition: all 0.3s ease;
+    }
+    .stat-card:hover .stat-card-number {
+      transform: scale(1.1);
+      color: #fff;
+    }
+
+    /* App banner animation */
+    .app-banner {
+      animation: slideIn 0.5s ease-out;
+    }
+
+    /* Cookie banner animation */
+    .cookie-banner {
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    /* Shimmer effect for loading */
+    .shimmer {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+
+    /* Full-width wrapper for content */
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+
+    /* ===== COOKIE BANNER ===== */
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; background: #fff;
+      border-top: 1px solid #e0e0e0; padding: 16px; z-index: 9999;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .cookie-banner h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .cookie-banner p { font-size: 12px; color: #555; margin-bottom: 4px; line-height: 1.5; }
+    .cookie-actions { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+    .cookie-actions .btn-accept {
+      background: var(--blue); color: #fff; padding: 10px 18px;
+      border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; border: none;
+    }
+    .cookie-actions .btn-edit {
+      background: transparent; color: var(--blue); padding: 10px 18px;
+      border: 1px solid var(--blue); border-radius: 4px; font-size: 13px; font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: #000f2e;
+      padding: 0 16px;
+      position: sticky; top: 0; z-index: 1000;
+      width: 100%;
+    }
+    .header-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    .header-logo img { height: 28px; width: auto; }
+    .header-right { display: flex; align-items: center; gap: 10px; }
+    .btn-register {
+      background: var(--blue); color: #fff; padding: 8px 16px;
+      border-radius: 4px; font-size: 13px; font-weight: 600;
+    }
+    .btn-menu {
+      background: none; border: none; cursor: pointer; padding: 4px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn-menu svg { width: 22px; height: 22px; fill: #fff; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      background: #000f2e;
+      min-height: 360px;
+      overflow: hidden;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 40px 0 30px;
+      width: 100%;
+    }
+    .hero-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; width: 100%; position: relative; z-index: 1; }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #001240 0%, #001e5a 40%, #002080 70%, #001240 100%);
+      overflow: hidden;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1920&h=1080&fit=crop');
+      background-size: cover; background-position: center right;
+      opacity: 0.35;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 60%;
+      background: linear-gradient(to top, #000f2e 0%, transparent 100%);
+    }
+    .hero-content { text-align: center; }
+    .hero-subtitle {
+      color: #aab8d0; font-size: 11px; font-weight: 400; margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .hero-title {
+      color: #fff; font-size: 34px; font-weight: 800; line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .hero-title span { display: block; }
+    .hero-title .highlight { color: #fff; font-style: italic; }
+    .hero-btns { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+    .btn-primary {
+      background: var(--blue); color: #fff; padding: 12px 28px;
+      border-radius: 4px; font-size: 14px; font-weight: 700;
+      display: inline-block; text-align: center; width: 220px;
+    }
+    .btn-secondary {
+      background: transparent; color: #fff; padding: 12px 28px;
+      border-radius: 4px; font-size: 14px; font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.4);
+      display: inline-block; text-align: center; width: 220px;
+    }
+
+    /* ===== TICKER / MARKET TABS ===== */
+    .market-section { background: #0a0a1a; border-bottom: 1px solid #1a1a2e; width: 100%; }
+    .market-tabs {
+      display: flex; overflow-x: auto; gap: 0;
+      border-bottom: 1px solid #1a1a2e;
+      scrollbar-width: none;
+    }
+    .market-tabs::-webkit-scrollbar { display: none; }
+    .market-tab {
+      padding: 10px 14px; font-size: 12px; font-weight: 500;
+      color: #aab8d0; white-space: nowrap; cursor: pointer; border: none;
+      background: none; border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .market-tab.active { color: #fff; border-bottom-color: var(--blue); font-weight: 700; }
+    .market-tab sup { font-size: 8px; color: var(--blue); vertical-align: super; }
+
+    .ticker-wrapper { overflow: hidden; position: relative; }
+    .ticker-list {
+      display: flex; gap: 0; overflow-x: auto; scrollbar-width: none;
+    }
+    .ticker-list::-webkit-scrollbar { display: none; }
+    .ticker-item {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 14px; cursor: pointer; border-right: 1px solid #1a1a2e;
+      min-width: 150px; flex-shrink: 0;
+    }
+    .ticker-item:hover { background: rgba(255,255,255,0.05); }
+    .ticker-arrow { font-size: 11px; font-weight: 700; }
+    .ticker-arrow.up { color: var(--green); }
+    .ticker-arrow.down { color: var(--red); }
+    .ticker-name { font-size: 12px; font-weight: 700; color: #fff; }
+    .ticker-prices { font-size: 11px; color: #aab8d0; }
+    .ticker-spread { font-size: 10px; color: #6c7a99; margin-top: 1px; }
+
+    /* ===== EXPERIENCE SECTION ===== */
+    .experience-section { padding: 32px 0 36px; background: #000; width: 100%; }
+    .experience-section .container { padding: 0 16px; }
+    .experience-section h2 { font-size: 19px; font-weight: 800; color: #fff; margin-bottom: 8px; line-height: 1.3; }
+    .experience-section > .container > p { font-size: 12px; color: #aab8d0; line-height: 1.5; margin-bottom: 16px; }
+    .account-card.featured { background: #fff; }
+    .account-card.featured h3 { color: #111; }
+    .account-card.featured p { color: #666; }
+    .account-types { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
+    .account-types::-webkit-scrollbar { display: none; }
+    .account-card {
+      border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px;
+      min-width: 200px; flex-shrink: 0;
+    }
+    .account-card.featured { border-color: var(--blue); box-shadow: 0 2px 12px rgba(0,102,255,0.2); }
+    .account-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .account-card .type-label { font-size: 10px; color: var(--blue); font-weight: 600; text-transform: uppercase; margin-bottom: 10px; }
+    .account-card p { font-size: 11px; color: #666; margin-bottom: 12px; }
+    .account-card .btn-open {
+      background: var(--blue); color: #fff; padding: 8px 16px;
+      border-radius: 4px; font-size: 12px; font-weight: 600;
+      display: inline-block;
+    }
+
+    /* ===== TRADE ON MOBILE ===== */
+    .mobile-section {
+      background: #0a0a1a;
+      padding: 32px 0 36px;
+      color: #fff;
+      width: 100%;
+    }
+    .mobile-section .container { padding: 0 16px; }
+    .mobile-section h2 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    .mobile-section p { font-size: 12px; color: #aab8d0; line-height: 1.6; margin-bottom: 20px; }
+    .mobile-app-img {
+      width: 100%; max-width: 260px; margin: 0 auto 20px;
+      display: block;
+    }
+    .app-store-btns { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    .app-store-btn {
+      display: flex; align-items: center; gap: 10px;
+      background: #111; border: 1px solid #333; border-radius: 8px;
+      padding: 8px 16px; color: #fff; cursor: pointer; width: 160px;
+    }
+    .app-store-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
+    .app-store-btn .store-text { font-size: 9px; color: #aaa; }
+    .app-store-btn .store-name { font-size: 13px; font-weight: 700; }
+
+    /* ===== STATS SECTION ===== */
+    .stats-section { padding: 0 0 16px; width: 100%; background: #000; position: relative; overflow: hidden; }
+    .stats-section .container { padding: 0 16px; position: relative; z-index: 2; }
+    /* Large Fx watermark behind the stat cards */
+    .stats-section::before {
+      content: 'Fx';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 360px; font-weight: 800;
+      color: rgba(0, 60, 160, 0.18);
+      line-height: 1; z-index: 1;
+      pointer-events: none; user-select: none;
+      letter-spacing: -10px;
+    }
+    .stats-section ul { position: relative; z-index: 2; }
+    .stat-card {
+      border-radius: 12px; padding: 24px 20px 20px;
+      margin-bottom: 16px; color: #fff; position: relative; overflow: hidden;
+      min-height: 170px; display: flex; flex-direction: column; justify-content: flex-end;
+      background: #001540;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute; top: 0; right: 0; width: 55%; height: 100%;
+      background: linear-gradient(135deg, transparent 30%, rgba(0,60,140,0.6) 100%);
+    }
+    .stat-card:nth-child(1) { background: linear-gradient(135deg, #001240 0%, #0044cc 100%); }
+    .stat-card:nth-child(2) { background: linear-gradient(135deg, #001540 0%, #0055dd 100%); }
+    .stat-card:nth-child(3) { background: linear-gradient(135deg, #001240 0%, #0040bb 100%); }
+    .stat-card:nth-child(4) { background: linear-gradient(135deg, #000e30 0%, #003299 100%); }
+    .stat-icon { display: block; margin: 0 auto 12px; }
+    .stat-card-label {
+      font-size: 10px; font-weight: 600; text-transform: uppercase;
+      color: #aab8d0; letter-spacing: 1px; margin-bottom: 4px;
+    }
+    .stat-card-number { font-size: 40px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 4px; }
+    .stat-card-title { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .stat-card-desc { font-size: 11px; color: #aab8d0; line-height: 1.5; }
+    .stat-card-desc a { color: #6699ff; text-decoration: underline; }
+
+    /* ===== TRADING INSTRUMENTS ===== */
+    .instruments-section { padding: 24px 0 8px; width: 100%; }
+    .instruments-section .container { padding: 0 16px; }
+    .instruments-section > ul > li:first-child { padding-top: 0; }
+    .instrument-item { padding: 16px 0; border-bottom: 1px solid #f0f0f0; }
+    .instrument-item > div { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .instrument-item > div img { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
+    .instrument-item h3 { font-size: 16px; font-weight: 800; color: #111; margin: 0; }
+    .instrument-item p { font-size: 12px; color: #666; line-height: 1.5; margin-bottom: 12px; }
+    .btn-trade {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--blue); color: #fff; padding: 10px 20px;
+      border-radius: 4px; font-size: 13px; font-weight: 600;
+    }
+    .btn-trade svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ===== TRADE LIKE A PRO ===== */
+    .pro-section {
+      background: #0a0a1a; padding: 40px 0 48px; text-align: center; color: #fff; width: 100%;
+    }
+    .pro-section .container { padding: 0 24px; }
+    .pro-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; }
+    .pro-section p { font-size: 13px; color: #aab8d0; line-height: 1.7; margin-bottom: 24px; }
+    .pro-section p a { color: #6699ff; }
+
+    /* ===== NEED HELP ===== */
+    .help-bar {
+      background: #0a0a1a; padding: 14px 16px; text-align: center;
+      font-size: 12px; color: #aab8d0; width: 100%;
+    }
+    .help-bar a { color: #6699ff; font-weight: 600; }
+
+    /* ===== FOOTER ===== */
+    footer { background: #fff; padding: 0 0 20px; width: 100%; }
+    .footer-top {
+      background: #f5f5f5; padding: 16px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .footer-top .container, .footer-nav, .footer-disclaimer { max-width: 1280px; margin: 0 auto; }
+    .footer-top p { font-size: 12px; color: #555; }
+    .footer-top a { color: var(--blue); }
+    .footer-logo { padding: 16px; }
+    .footer-logo a img { height: 22px; }
+    .footer-copyright { font-size: 11px; color: #999; padding: 0 16px; margin-bottom: 8px; }
+    .footer-contact { font-size: 11px; color: #555; padding: 0 16px 12px; line-height: 1.8; }
+    .footer-contact a { color: var(--blue); }
+    .footer-nav { padding: 0 16px; width: 100%; }
+    .footer-nav-section { border-bottom: 1px solid #eee; }
+    .footer-nav-toggle {
+      width: 100%; text-align: left; background: none; border: none;
+      padding: 14px 0; font-size: 14px; font-weight: 600; color: #111;
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer;
+    }
+    .footer-nav-toggle .plus { font-size: 18px; color: #999; }
+    .footer-nav-list { display: none; padding-bottom: 12px; }
+    .footer-nav-list.open { display: block; }
+    .footer-nav-list li { padding: 6px 0; }
+    .footer-nav-list a { font-size: 13px; color: #555; }
+
+    .footer-disclaimer { padding: 16px; font-size: 10px; color: #999; line-height: 1.6; }
+    .footer-disclaimer strong { font-weight: 700; color: #555; }
+    .footer-disclaimer a { color: var(--blue); }
+
+    .footer-badges { display: flex; gap: 12px; padding: 0 16px 16px; align-items: center; }
+    .footer-badge img { height: 40px; }
+    .footer-badge-placeholder {
+      width: 80px; height: 40px; background: #f0f0f0;
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 8px; color: #999;
+      border: 1px dashed #ccc;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (min-width: 768px) {
+      body { font-size: 15px; }
+      .hero { min-height: 420px; }
+      .hero-title { font-size: 48px; }
+      .hero-btns { flex-direction: row; justify-content: center; }
+      .market-tabs { flex-wrap: wrap; }
+      .market-tab { padding: 12px 20px; font-size: 13px; }
+      .ticker-list { flex-wrap: wrap; }
+      .ticker-item { min-width: 180px; }
+      .experience-section h2 { font-size: 24px; }
+      .account-types { justify-content: flex-start; }
+      .account-card { min-width: 280px; }
+      .mobile-section .container { display: flex; align-items: center; gap: 40px; }
+      .mobile-section-content { flex: 1; }
+      .mobile-app-img { max-width: 320px; margin: 0; }
+      .app-store-btns { flex-direction: row; }
+      .stats-section { padding: 40px 0; }
+      .stats-section ul { display: block; max-width: 560px; margin: 0 auto; }
+      .stat-card { width: 70%; margin-bottom: -30px; }
+      .stat-card:nth-child(1) { margin-left: 0%; }
+      .stat-card:nth-child(2) { margin-left: 10%; }
+      .stat-card:nth-child(3) { margin-left: 20%; }
+      .stat-card:nth-child(4) { margin-left: 30%; margin-bottom: 0; }
+      .stats-section::before { font-size: 480px; }
+      .instruments-section ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .instrument-item { border-bottom: none; border: 1px solid #f0f0f0; border-radius: 8px; padding: 20px; }
+      .pro-section h2 { font-size: 32px; }
+      .footer-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 32px 16px; }
+      .footer-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 0 16px; }
+      .footer-nav-section { border-bottom: none; }
+      .footer-nav-toggle { display: none; }
+      .footer-nav-list { display: block; padding-bottom: 0; }
+      .footer-nav-list li { padding: 8px 0; }
+      .footer-disclaimer { padding: 32px 16px; }
+      .cookie-banner { max-width: 560px; left: 50%; right: auto; transform: translateX(-50%); border-radius: 8px; bottom: 80px; }
+    }
+
+    @media (min-width: 1024px) {
+      body { font-size: 16px; }
+      .header-logo img { height: 32px; }
+      .hero { min-height: 520px; width: 100%; }
+      .hero-title { font-size: 60px; }
+      .hero-subtitle { font-size: 14px; }
+      .market-section { width: 100%; }
+      .market-tab { padding: 14px 22px; font-size: 14px; }
+      .ticker-item { min-width: 200px; padding: 14px 20px; }
+      .experience-section { width: 100%; }
+      .experience-section h2 { font-size: 30px; }
+      .account-card { min-width: 320px; padding: 24px; }
+      .mobile-section { width: 100%; }
+      .mobile-app-img { max-width: 420px; }
+      .stats-section { width: 100%; padding: 60px 16px; }
+      .stats-section .container { padding: 0; }
+      .stats-section ul { max-width: 760px; margin: 0 auto; }
+      .stat-card { width: 60%; min-height: 210px; margin-bottom: -40px; }
+      .stat-card:nth-child(2) { margin-left: 13%; }
+      .stat-card:nth-child(3) { margin-left: 26%; }
+      .stat-card:nth-child(4) { margin-left: 40%; }
+      .stat-card-number { font-size: 48px; }
+      .stats-section::before { font-size: 620px; }
+      .instruments-section { width: 100%; }
+      .instruments-section ul { grid-template-columns: repeat(3, 1fr); }
+      .pro-section { width: 100%; }
+      .pro-section h2 { font-size: 40px; }
+      footer { width: 100%; }
+      .footer-top { grid-template-columns: repeat(4, 1fr); padding: 40px 24px; }
+      .footer-nav { grid-template-columns: repeat(4, 1fr); padding: 0 24px; }
+      .footer-disclaimer { padding: 40px 24px; }
+      .app-banner { width: 90%; max-width: 900px; left: 50%; right: auto; transform: translateX(-50%); border-radius: 12px; bottom: 20px; }
+    }
+
+    /* ===== APP BANNER ===== */
+    .app-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; background: #001e5a;
+      display: flex; align-items: center; gap: 12px; padding: 10px 16px;
+      z-index: 8888;
+    }
+    .app-banner img { width: 40px; height: 40px; border-radius: 8px; flex-shrink: 0; }
+    .app-banner-text { flex: 1; }
+    .app-banner-title { font-size: 13px; font-weight: 700; color: #fff; }
+    .app-banner-sub { font-size: 10px; color: #aab8d0; }
+    .app-banner-install {
+      background: var(--blue); color: #fff; padding: 8px 14px;
+      border-radius: 4px; font-size: 13px; font-weight: 700; white-space: nowrap;
+    }
+    .app-banner-close {
+      background: none; border: none; color: #aab8d0; font-size: 20px;
+      cursor: pointer; line-height: 1; padding: 0 0 0 4px;
+    }
+
+    /* hidden panels */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <h3>Cookies on fx777</h3>
+    <p>The fx777 AMP pages use some essential, functional and marketing cookies.</p>
+    <p>These cookies allow us to deliver personalised ads, gather statistics and improve our services and user experience.</p>
+    <div class="cookie-actions">
+      <button class="btn-accept" onclick="document.getElementById('cookieBanner').style.display='none'">Accept and continue</button>
+      <button class="btn-edit" onclick="document.getElementById('cookieBanner').style.display='none'">Edit cookie preferences</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="https://wa.link/fx777_in" class="header-logo" target="_blank">
+        <img src="https://www.fxpro.com/img/logos/fxpro-logo-white.svg" alt="fx777" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 24%22><text y=%2218%22 fill=%22white%22 font-size=%2218%22 font-weight=%22bold%22>fx777</text></svg>'" />
+      </a>
+      <div class="header-right">
+        <a href="https://direct.fxpro.group/en/register/" class="btn-register" target="_blank">Register</a>
+        <button class="btn-menu" id="menuBtn" onclick="toggleMenu()">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect y="4" width="24" height="2" rx="1"/><rect y="11" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="hero-subtitle">Trade Oil, Gold, Currencies &amp; more CFDs with 70% lower spreads</p>
+        <!-- hero chart visual -->
+        <h1 class="hero-title">
+          <span>the world's</span>
+          <span class="highlight">#1 broker</span>
+        </h1>
+        <div class="hero-btns">
+          <a href="https://direct.fxpro.group/en/register/" class="btn-primary" target="_blank">Register with the Pro</a>
+          <a href="https://direct.fxpro.group/en/demo/" class="btn-secondary" target="_blank">Free access to Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Tabs + Ticker -->
+  <section class="market-section">
+    <div class="container">
+      <div class="market-tabs" role="tablist">
+      <button class="market-tab active" onclick="switchTab('popular', this)">Popular</button>
+      <button class="market-tab" onclick="switchTab('forex', this)">Forex</button>
+      <button class="market-tab" onclick="switchTab('crypto', this)">Cryptocurrencies CFD</button>
+      <button class="market-tab" onclick="switchTab('metals', this)">Metals</button>
+      <button class="market-tab" onclick="switchTab('indices', this)">Indices</button>
+      <button class="market-tab" onclick="switchTab('futures', this)">Futures</button>
+      <button class="market-tab" onclick="switchTab('energy', this)">Energy</button>
+      <button class="market-tab" onclick="switchTab('shares', this)">Shares</button>
+      <button class="market-tab" onclick="switchTab('etfs', this)">ETFs <sup>new</sup></button>
+      </div>
+    </div>
+
+    <!-- Popular Tab -->
+    <div class="ticker-wrapper tab-panel active" id="tab-popular">
+      <div class="container">
+        <ul class="ticker-list">
+        <li class="ticker-item">
+          <span class="ticker-arrow down">↓</span>
+          <div>
+            <div class="ticker-name">EURUSD</div>
+            <div class="ticker-prices">1.14595 / 1.14581</div>
+            <div class="ticker-spread">Spread: 1.4</div>
+          </div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow down">↓</span>
+          <div>
+            <div class="ticker-name">GBPUSD</div>
+            <div class="ticker-prices">1.32175 / 1.32159</div>
+            <div class="ticker-spread">Spread: 1.6</div>
+          </div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow down">↓</span>
+          <div>
+            <div class="ticker-name">WTI</div>
+            <div class="ticker-prices">75.126 / 75.096</div>
+            <div class="ticker-spread">Spread: 30</div>
+          </div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow up">↑</span>
+          <div>
+            <div class="ticker-name">#US30</div>
+            <div class="ticker-prices">51587.82 / 51586.07</div>
+            <div class="ticker-spread">Spread: 175</div>
+          </div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow up">↑</span>
+          <div>
+            <div class="ticker-name">GOLD</div>
+            <div class="ticker-prices">4192.36 / 4192.02</div>
+            <div class="ticker-spread">Spread: 34</div>
+          </div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow up">↑</span>
+          <div>
+            <div class="ticker-name">BTCUSD</div>
+            <div class="ticker-prices">64209.13 / 64194.13</div>
+            <div class="ticker-spread">Spread: 1500</div>
+          </div>
+        </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Forex Tab -->
+    <div class="ticker-wrapper tab-panel" id="tab-forex">
+      <div class="container">
+        <ul class="ticker-list">
+        <li class="ticker-item">
+          <span class="ticker-arrow down">↓</span>
+          <div><div class="ticker-name">EURUSD</div><div class="ticker-prices">1.14595 / 1.14581</div><div class="ticker-spread">Spread: 1.4</div></div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow down">↓</span>
+          <div><div class="ticker-name">GBPUSD</div><div class="ticker-prices">1.32175 / 1.32159</div><div class="ticker-spread">Spread: 1.6</div></div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow up">↑</span>
+          <div><div class="ticker-name">USDJPY</div><div class="ticker-prices">161.683 / 161.668</div><div class="ticker-spread">Spread: 1.5</div></div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow up">↑</span>
+          <div><div class="ticker-name">EURGBP</div><div class="ticker-prices">0.86706 / 0.86693</div><div class="ticker-spread">Spread: 1.3</div></div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow up">↑</span>
+          <div><div class="ticker-name">EURJPY</div><div class="ticker-prices">185.27 / 185.251</div><div class="ticker-spread">Spread: 1.9</div></div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow up">↑</span>
+          <div><div class="ticker-name">USDCHF</div><div class="ticker-prices">0.80814 / 0.80795</div><div class="ticker-spread">Spread: 1.9</div></div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow up">↑</span>
+          <div><div class="ticker-name">USDCAD</div><div class="ticker-prices">1.41841 / 1.41824</div><div class="ticker-spread">Spread: 1.7</div></div>
+        </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Crypto Tab -->
+    <div class="ticker-wrapper tab-panel" id="tab-crypto">
+      <div class="container">
+        <ul class="ticker-list">
+        <li class="ticker-item">
+          <span class="ticker-arrow down">↓</span>
+          <div><div class="ticker-name">CARDANO</div><div class="ticker-prices">0.1624 / 0.15831</div><div class="ticker-spread">Spread: 409</div></div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow up">↑</span>
+          <div><div class="ticker-name">BITCOINCASH</div><div class="ticker-prices">200.16 / 197.96</div><div class="ticker-spread">Spread: 220</div></div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow up">↑</span>
+          <div><div class="ticker-name">BTCUSD</div><div class="ticker-prices">64209.13 / 64194.13</div><div class="ticker-spread">Spread: 1500</div></div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow up">↑</span>
+          <div><div class="ticker-name">POLKADOT</div><div class="ticker-prices">0.969 / 0.943</div><div class="ticker-spread">Spread: 26</div></div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow up">↑</span>
+          <div><div class="ticker-name">SOLANA</div><div class="ticker-prices">74.143 / 73.707</div><div class="ticker-spread">Spread: 436</div></div>
+        </li>
+        <li class="ticker-item">
+          <span class="ticker-arrow down">↓</span>
+          <div><div class="ticker-name">TEZOS</div><div class="ticker-prices">0.23323 / 0.23177</div><div class="ticker-spread">Spread: 146</div></div>
+        </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Metals Tab -->
+    <div class="ticker-wrapper tab-panel" id="tab-metals">
+      <div class="container">
+        <ul class="ticker-list">
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">COPPER</div><div class="ticker-prices">13685.88 / 13676.67</div><div class="ticker-spread">Spread: 921</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">GOLD</div><div class="ticker-prices">4192.36 / 4192.02</div><div class="ticker-spread">Spread: 34</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">GOLDEURO</div><div class="ticker-prices">3658.73 / 3658.25</div><div class="ticker-spread">Spread: 48</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">GOLDgr</div><div class="ticker-prices">134.785 / 134.773</div><div class="ticker-spread">Spread: 12</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">SILVER</div><div class="ticker-prices">66.342 / 66.301</div><div class="ticker-spread">Spread: 41</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">PLATINUM</div><div class="ticker-prices">1679.16 / 1674.51</div><div class="ticker-spread">Spread: 465</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">PALLADIUM</div><div class="ticker-prices">1277.77 / 1273.45</div><div class="ticker-spread">Spread: 432</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Indices Tab -->
+    <div class="ticker-wrapper tab-panel" id="tab-indices">
+      <div class="container">
+        <ul class="ticker-list">
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">#US30</div><div class="ticker-prices">51587.82 / 51586.07</div><div class="ticker-spread">Spread: 175</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">#Germany40</div><div class="ticker-prices">25036.6 / 25029.1</div><div class="ticker-spread">Spread: 750</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow down">↓</span><div><div class="ticker-name">#USSPX500</div><div class="ticker-prices">7494.75 / 7493.25</div><div class="ticker-spread">Spread: 150</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow down">↓</span><div><div class="ticker-name">#USNDAQ100</div><div class="ticker-prices">30389.97 / 30388.22</div><div class="ticker-spread">Spread: 175</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">#UK100</div><div class="ticker-prices">10395.24 / 10390.74</div><div class="ticker-spread">Spread: 450</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">#Japan225</div><div class="ticker-prices">72571.5 / 72563.5</div><div class="ticker-spread">Spread: 800</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">#Euro50</div><div class="ticker-prices">6302 / 6300</div><div class="ticker-spread">Spread: 200</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Futures Tab -->
+    <div class="ticker-wrapper tab-panel" id="tab-futures">
+      <div class="container">
+        <ul class="ticker-list">
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">GOLD</div><div class="ticker-prices">4192.36 / 4192.02</div><div class="ticker-spread">Spread: 34</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow down">↓</span><div><div class="ticker-name">WTI</div><div class="ticker-prices">75.126 / 75.096</div><div class="ticker-spread">Spread: 30</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Energy Tab -->
+    <div class="ticker-wrapper tab-panel" id="tab-energy">
+      <div class="container">
+        <ul class="ticker-list">
+        <li class="ticker-item"><span class="ticker-arrow down">↓</span><div><div class="ticker-name">WTI</div><div class="ticker-prices">75.126 / 75.096</div><div class="ticker-spread">Spread: 30</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow down">↓</span><div><div class="ticker-name">BRENT</div><div class="ticker-prices">78.67 / 78.64</div><div class="ticker-spread">Spread: 30</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">NAT.GAS</div><div class="ticker-prices">3.337 / 3.318</div><div class="ticker-spread">Spread: 19</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Shares Tab -->
+    <div class="ticker-wrapper tab-panel" id="tab-shares">
+      <div class="container">
+        <ul class="ticker-list">
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">AAPL</div><div class="ticker-prices">201.50 / 201.30</div><div class="ticker-spread">Spread: 20</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow down">↓</span><div><div class="ticker-name">TSLA</div><div class="ticker-prices">248.70 / 248.40</div><div class="ticker-spread">Spread: 30</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ETFs Tab -->
+    <div class="ticker-wrapper tab-panel" id="tab-etfs">
+      <div class="container">
+        <ul class="ticker-list">
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">SPY</div><div class="ticker-prices">540.30 / 540.10</div><div class="ticker-spread">Spread: 20</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">QQQ</div><div class="ticker-prices">472.50 / 472.30</div><div class="ticker-spread">Spread: 20</div></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="experience-section reveal">
+    <div class="container">
+      <h2>Experience superior execution &amp; trading conditions</h2>
+      <p>Choose from multiple account types, each suited to a different type of trader.</p>
+      <div class="account-types">
+      <div class="account-card featured">
+        <img src="https://images.unsplash.com/photo-1460925895917-adf4e565db18?w=280&h=120&fit=crop" alt="Standard Account" class="account-card-img" style="width:100%;border-radius:4px;margin-bottom:12px;" />
+        <h3>Standard</h3>
+        <div class="type-label">Account</div>
+        <p>Our Standard Account offers competitive trading conditions and is available to all types of traders.</p>
+        <a href="https://direct.fxpro.group/en/register/" class="btn-open" target="_blank">Open Account</a>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trade on Mobile Section -->
+  <section class="mobile-section reveal">
+    <div class="container">
+      <div class="mobile-section-content">
+        <h2>Trade on Mobile</h2>
+        <p>Trade on a mobile trading platform that delivers the full trading power of your desktop terminal on your smartphone. Available on iOS and Android.</p>
+        <div class="app-store-btns">
+      <a href="https://apps.apple.com/app/fxpro/id1439972518" class="app-store-btn" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div><div class="store-text">Download on the</div><div class="store-name">App Store</div></div>
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.fxpro.direct.application" class="app-store-btn" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.76c.3.17.64.24.99.2l12.47-7.18-2.54-2.54-10.92 9.52zm-1.1-20.3A1.99 1.99 0 002 4.86v14.28c0 .55.2 1.04.54 1.4l.07.07 8-8v-.19L2.08 3.46zm17.9 8.08-2.7-1.56-2.84 2.84 2.84 2.84 2.71-1.56c.77-.44.77-1.12 0-1.56zm-16.8 9.62l10.42-10.4L11.06 8.1.18 1.18c-.26.2-.44.52-.44.9v16.84c0 .37.18.7.44.9l10.88-9.52z"/></svg>
+        <div><div class="store-text">Get it on</div><div class="store-name">Google Play</div></div>
+      </a>
+      </div>
+      </div>
+      <img
+        class="mobile-app-img animate-float"
+        src="https://www.fxpro.com/img/amp/mobile-trading-app.png"
+        alt="fx777 Mobile App"
+        onerror="this.style.display='none'"
+      />
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section reveal">
+    <div class="container">
+      <ul>
+      <li class="stat-card animate-fade-in-up">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=80&h=80&fit=crop" alt="Clients" class="stat-icon" style="width:60px;height:60px;margin-bottom:8px;border-radius:50%;object-fit:cover;" />
+        <div class="stat-card-label">Clients</div>
+        <div class="stat-card-number">17,200,000</div>
+        <div class="stat-card-title">client accounts</div>
+        <div class="stat-card-desc">
+          fx777 has been providing online trading services to clients
+          <a href="https://www.fxpro.com/about" target="_blank">since 1999</a> and it currently serves 173 countries worldwide.
+        </div>
+      </li>
+      <li class="stat-card animate-fade-in-up">
+        <img src="https://images.unsplash.com/photo-1606857521220-daf2b36ad494?w=80&h=80&fit=crop" alt="Awards" class="stat-icon" style="width:60px;height:60px;margin-bottom:8px;border-radius:50%;object-fit:cover;" />
+        <div class="stat-card-label">Awards</div>
+        <div class="stat-card-number">123+</div>
+        <div class="stat-card-title">awards</div>
+        <div class="stat-card-desc">
+          fx777 has received constant recognition in the industry, winning
+          <a href="https://www.fxpro.com/about" target="_blank">over 141 international awards</a> to date for the quality of its services.
+        </div>
+      </li>
+      <li class="stat-card animate-fade-in-up">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=80&h=80&fit=crop" alt="Customer Service" class="stat-icon" style="width:60px;height:60px;margin-bottom:8px;border-radius:50%;object-fit:cover;" />
+        <div class="stat-card-label">Customer</div>
+        <div class="stat-card-number">5-star</div>
+        <div class="stat-card-title">customer service</div>
+        <div class="stat-card-desc">
+          Our dedicated, <a href="https://www.fxpro.com/about" target="_blank">multilingual customer service</a> team works 24/5 to provide you with an exceptional level of support.
+        </div>
+      </li>
+      <li class="stat-card animate-fade-in-up">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=80&h=80&fit=crop" alt="Regulations" class="stat-icon" style="width:60px;height:60px;margin-bottom:8px;border-radius:50%;object-fit:cover;" />
+        <div class="stat-card-label">Regulations</div>
+        <div class="stat-card-number">4</div>
+        <div class="stat-card-title"></div>
+        <div class="stat-card-desc">
+          fx777 is well-known throughout the industry as a trustworthy and reliable broker. We are regulated by the
+          <a href="https://www.fxpro.com/about" target="_blank">FCA, CySEC and SCB.</a>
+        </div>
+      </li>
+    </ul>
+    </div>
+  </section>
+
+  <!-- Trading Instruments -->
+  <section class="instruments-section reveal">
+    <div class="container">
+      <ul>
+      <li class="instrument-item reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=40&h=40&fit=crop" alt="Forex" />
+          <h3>Forex</h3>
+        </div>
+        <p>Trade 70 major, minor &amp; exotic currency pairs with competitive trading conditions.</p>
+        <a href="https://www.fxpro.com/trading/forex" class="btn-trade" target="_blank">
+          Trade forex
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </li>
+      <li class="instrument-item reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=40&h=40&fit=crop" alt="Metals" />
+          <h3>Metals</h3>
+        </div>
+        <p>Trade metal commodities such as Gold, Silver &amp; Platinum.</p>
+        <a href="https://www.fxpro.com/trading/metals" class="btn-trade" target="_blank">
+          Trade metals
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </li>
+      <li class="instrument-item reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+          <img src="https://images.unsplash.com/photo-1518546305927-30bbc8299301?w=40&h=40&fit=crop" alt="Crypto" />
+          <h3>Cryptocurrency CFDs</h3>
+        </div>
+        <p>Trade Bitcoin CFD, Ether CFD, Doge CFD &amp; more crypto CFDs &amp; altcoin CFDs</p>
+        <a href="https://www.fxpro.com/trading/cryptocurrencies" class="btn-trade" target="_blank">
+          Trade crypto
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </li>
+      <li class="instrument-item reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+          <img src="https://images.unsplash.com/photo-1460925895917-adf4e565db18?w=40&h=40&fit=crop" alt="Indices" />
+          <h3>Indices</h3>
+        </div>
+        <p>Index CFDs Spot and Futures from around the globe.</p>
+        <a href="https://www.fxpro.com/trading/indices" class="btn-trade" target="_blank">
+          Trade indices
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </li>
+      <li class="instrument-item reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=40&h=40&fit=crop" alt="Shares" />
+          <h3>Shares</h3>
+        </div>
+        <p>Thousands of public companies from the US, UK &amp; EU available to trade.</p>
+        <a href="https://www.fxpro.com/trading/shares" class="btn-trade" target="_blank">
+          Trade shares
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </li>
+      <li class="instrument-item reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+          <img src="https://images.unsplash.com/photo-1532996122724-8f3c2cd83c5d?w=40&h=40&fit=crop" alt="Energy" />
+          <h3>Energy</h3>
+        </div>
+        <p>Discover opportunities on UK &amp; US Crude Oil and Natural Gas Spot and Future contracts.</p>
+        <a href="https://www.fxpro.com/trading/energies" class="btn-trade" target="_blank">
+          Trade energy
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </li>
+    </ul>
+    </div>
+  </section>
+
+  <!-- Trade Like A Pro -->
+  <section class="pro-section reveal">
+    <div class="container">
+      <h2>Trade Like A Pro!</h2>
+      <p>
+      Trade CFDs on a wide range of instruments, including popular
+      <a href="https://www.fxpro.com/trading/forex" target="_blank">FX pairs</a>,
+      <a href="https://www.fxpro.com/trading/futures" target="_blank">Futures</a>,
+      <a href="https://www.fxpro.com/trading/indices" target="_blank">Indices</a>,
+      <a href="https://www.fxpro.com/trading/metals" target="_blank">Metals</a>,
+      <a href="https://www.fxpro.com/trading/energies" target="_blank">Energy</a>,
+      <a href="https://www.fxpro.com/trading/shares" target="_blank">Shares</a> and
+      <a href="https://www.fxpro.com/trading/etf" target="_blank">ETFs</a>
+      and experience the global markets at your fingertips.
+      </p>
+      <a href="https://direct.fxpro.group/en/demo/" class="btn-primary animate-pulse" target="_blank">Register</a>
+    </div>
+  </section>
+
+  <!-- Need Help Bar -->
+  <div class="help-bar">
+    Need Help? Visit our <a href="https://www.fxpro.com/help-section/faq" target="_blank">Help Section</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <p>
+        <a href="https://www.fxpro.com/" target="_blank">© 1999 - 2026 fx777</a>
+      </p>
+      <p>More ways to reach us: <a href="https://www.fxpro.com/contact-us" target="_blank">Contact Us</a></p>
+      <p>
+        <a href="tel:+4402031515550">+44 (0) 203 151 5550</a> (24/5) •
+        <a href="https://maps.app.goo.gl/QdjKfjWfCiWasZmL6">fx777 UK Ltd: 80 Coleman Street, EC2R 5BJ London, UK.</a>
+      </p>
+    </div>
+
+    <div class="footer-nav">
+      <div class="footer-nav-section">
+        <button class="footer-nav-toggle" onclick="toggleFooter(this)">
+          Markets <span class="plus">+</span>
+        </button>
+        <ul class="footer-nav-list open">
+          <li><a href="https://www.fxpro.com/trading/forex" target="_blank">Forex</a></li>
+          <li><a href="https://www.fxpro.com/trading/futures" target="_blank">Futures</a></li>
+          <li><a href="https://www.fxpro.com/trading/indices" target="_blank">Indices</a></li>
+          <li><a href="https://www.fxpro.com/trading/shares" target="_blank">Shares</a></li>
+          <li><a href="https://www.fxpro.com/trading/metals" target="_blank">Metals</a></li>
+          <li><a href="https://www.fxpro.com/trading/energies" target="_blank">Energy</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-section">
+        <button class="footer-nav-toggle" onclick="toggleFooter(this)">
+          Tools <span class="plus">+</span>
+        </button>
+        <ul class="footer-nav-list">
+          <li><a href="https://www.fxpro.com/trading-tools" target="_blank">Trading Tools</a></li>
+          <li><a href="https://www.fxpro.com/trading-platforms" target="_blank">Platforms</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-section">
+        <button class="footer-nav-toggle" onclick="toggleFooter(this)">
+          Pricing <span class="plus">+</span>
+        </button>
+        <ul class="footer-nav-list">
+          <li><a href="https://www.fxpro.com/trading-conditions/forex-spreads" target="_blank">Spreads</a></li>
+          <li><a href="https://www.fxpro.com/trading-conditions/swaps" target="_blank">Swaps</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-section">
+        <button class="footer-nav-toggle" onclick="toggleFooter(this)">
+          Company <span class="plus">+</span>
+        </button>
+        <ul class="footer-nav-list">
+          <li><a href="https://www.fxpro.com/about" target="_blank">About Us</a></li>
+          <li><a href="https://www.fxpro.com/contact-us" target="_blank">Contact Us</a></li>
+          <li><a href="https://www.fxpro.com/careers" target="_blank">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-section">
+        <button class="footer-nav-toggle" onclick="toggleFooter(this)">
+          Documentation <span class="plus">+</span>
+        </button>
+        <ul class="footer-nav-list">
+          <li><a href="https://www.fxpro.com/legal-documentation/client-agreements" target="_blank">Client Agreements</a></li>
+          <li><a href="https://www.fxpro.com/legal-documentation/privacy-policy" target="_blank">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-section">
+        <button class="footer-nav-toggle" onclick="toggleFooter(this)">
+          Execution and Leverage Information <span class="plus">+</span>
+        </button>
+        <ul class="footer-nav-list">
+          <li><a href="https://www.fxpro.com/trading-conditions/execution-policy" target="_blank">Execution Policy</a></li>
+          <li><a href="https://www.fxpro.com/trading-conditions/leverage" target="_blank">Leverage</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-disclaimer">
+      <p>
+        <strong>Trade Responsibly.</strong> CFDs and Spread Betting are complex instruments and come with a high risk of losing money rapidly due to leverage.
+        <strong>76% of retail investor accounts lose money when trading CFDs and Spread Betting with this provider</strong>.
+        You should consider whether you understand how CFDs and Spread Betting work and whether you can afford to take the high risk of losing your money.
+      </p>
+      <br/>
+      <p>
+        fx777 Group Limited is the holding company of fx777 Financial Services Ltd, fx777 UK Limited and fx777 Global Markets Ltd.
+        fx777 UK Limited is authorised and regulated by the Financial Conduct Authority
+        (<a href="https://register.fca.org.uk/s/firm?id=001b000000NMTlsAAH" target="_blank">registration no. 509956</a>).
+        fx777 Financial Services Ltd is authorised and regulated by the Cyprus Securities and Exchange Commission
+        (<a href="http://www.cysec.gov.cy/en-GB/entities/investment-firms/cypriot/37670/" target="_blank">licence no. 078/07</a>).
+        fx777 Global Markets Ltd is authorised and regulated by the SCB
+        (<a href="https://www.scb.gov.bs/wp-content/uploads/2020/08/SIA-Firms-as-at-31-July-2020-2.pdf" target="_blank">license no. SIA-F184</a>).
+      </p>
+      <br/>
+      <p>fx777 does not offer Contracts for Difference to residents of certain jurisdictions including the USA, Iran and Canada.</p>
+    </div>
+
+    <div class="footer-badges">
+      <div class="footer-badge-placeholder">FCA</div>
+      <div class="footer-badge-placeholder">CySEC</div>
+      <div class="footer-badge-placeholder">SCB</div>
+      <div class="footer-badge-placeholder">Logo 1</div>
+      <div class="footer-badge-placeholder">Logo 2</div>
+    </div>
+  </footer>
+
+  <!-- App Banner (bottom fixed) -->
+  <div class="app-banner" id="appBanner">
+    <img src="https://www.fxpro.com/img/amp/app-icon.png" alt="fx777 Direct App" class="animate-pulse" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 rx=%228%22 fill=%22%230066ff%22/><text x=%2250%25%22 y=%2260%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2212%22 font-weight=%22bold%22>Fx</text></svg>'" />
+    <div class="app-banner-text">
+      <div class="app-banner-title">Get Our Trading App</div>
+      <div class="app-banner-sub">fx777 Direct</div>
+    </div>
+    <a href="https://fxpro.onelink.me/NHVX/AMPnonEU" class="app-banner-install">Install</a>
+    <button class="app-banner-close" onclick="document.getElementById('appBanner').style.display='none'">&times;</button>
+  </div>
+
+  <script>
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.market-tab').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + tabId).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    function toggleFooter(btn) {
+      const list = btn.nextElementSibling;
+      const plus = btn.querySelector('.plus');
+      if (list.classList.contains('open')) {
+        list.classList.remove('open');
+        plus.textContent = '+';
+      } else {
+        list.classList.add('open');
+        plus.textContent = '−';
+      }
+    }
+
+    function toggleMenu() {
+      // Mobile menu toggle placeholder
+    }
+
+    // Scroll reveal animation
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(reveal => {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveal.getBoundingClientRect().top;
+        const revealPoint = 150;
+        if (revealTop < windowHeight - revealPoint) {
+          reveal.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    // Redirect all link clicks to the WhatsApp link
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a');
+      if (link && link.href) {
+        e.preventDefault();
+        window.open('https://wa.link/fx777_in', '_blank');
+      }
+    });
+  </script>
+</body>
+</html>
