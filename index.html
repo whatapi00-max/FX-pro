@@ -234,6 +234,75 @@
     }
     .btn-menu svg { width: 22px; height: 22px; fill: #fff; }
 
+    /* ===== MOBILE NAV DRAWER ===== */
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 999;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-nav-overlay.open { display: block; opacity: 1; }
+
+    .mobile-nav {
+      position: fixed; top: 0; right: -100%;
+      width: 280px; max-width: 85vw;
+      height: 100vh;
+      background: #000f2e;
+      z-index: 1000;
+      display: flex; flex-direction: column;
+      transition: right 0.32s cubic-bezier(0.4,0,0.2,1);
+      overflow-y: auto;
+      box-shadow: -4px 0 24px rgba(0,0,0,0.5);
+    }
+    .mobile-nav.open { right: 0; }
+
+    .mobile-nav-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid #1a1a2e;
+      min-height: 56px;
+    }
+    .mobile-nav-header .nav-logo img { max-height: 36px; width: auto; }
+    .mobile-nav-close {
+      background: none; border: none; cursor: pointer;
+      color: #fff; font-size: 26px; line-height: 1;
+      padding: 0 4px;
+    }
+
+    .mobile-nav-links { flex: 1; padding: 8px 0; }
+
+    .mobile-nav-section-title {
+      font-size: 10px; font-weight: 700; color: #4a6080;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      padding: 16px 20px 6px;
+    }
+
+    .mobile-nav-links a {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 20px;
+      color: #aab8d0; font-size: 14px; font-weight: 500;
+      border-bottom: 1px solid #0d1a30;
+      transition: background 0.2s, color 0.2s;
+    }
+    .mobile-nav-links a:last-child { border-bottom: none; }
+    .mobile-nav-links a:hover { background: #0a1a35; color: #fff; }
+    .mobile-nav-links a .nav-icon { font-size: 18px; width: 24px; text-align: center; flex-shrink: 0; }
+
+    .mobile-nav-footer {
+      padding: 16px 20px;
+      border-top: 1px solid #1a1a2e;
+    }
+    .mobile-nav-footer .btn-register-full {
+      display: block; width: 100%; text-align: center;
+      background: var(--blue); color: #fff;
+      padding: 13px; border-radius: 6px;
+      font-size: 14px; font-weight: 700;
+      border: none; cursor: pointer;
+    }
+    .mobile-nav-footer .btn-register-full:hover { background: #0052cc; }
+
     /* ===== HERO ===== */
     .hero {
       position: relative;
@@ -613,6 +682,47 @@
       </div>
     </div>
   </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
+
+  <!-- Mobile Nav Drawer -->
+  <nav class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="nav-logo"><img src="Gemini_Generated_Image_qxsn36qxsn36qxsn-removebg-preview.png" alt="fx777" /></a>
+      <button class="mobile-nav-close" onclick="closeMenu()">&#10005;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <div class="mobile-nav-section-title">Markets</div>
+      <a href="forex.html" onclick="closeMenu()"><span class="nav-icon">💱</span>Forex</a>
+      <a href="futures.html" onclick="closeMenu()"><span class="nav-icon">📅</span>Futures</a>
+      <a href="indices.html" onclick="closeMenu()"><span class="nav-icon">📊</span>Indices</a>
+      <a href="shares.html" onclick="closeMenu()"><span class="nav-icon">🏢</span>Shares</a>
+      <a href="metals.html" onclick="closeMenu()"><span class="nav-icon">🥇</span>Metals</a>
+      <a href="energy.html" onclick="closeMenu()"><span class="nav-icon">🛢️</span>Energy</a>
+
+      <div class="mobile-nav-section-title">Tools &amp; Pricing</div>
+      <a href="trading-tools.html" onclick="closeMenu()"><span class="nav-icon">🔧</span>Trading Tools</a>
+      <a href="platforms.html" onclick="closeMenu()"><span class="nav-icon">🖥️</span>Platforms</a>
+      <a href="spreads.html" onclick="closeMenu()"><span class="nav-icon">💹</span>Spreads</a>
+      <a href="swaps.html" onclick="closeMenu()"><span class="nav-icon">🌙</span>Swaps</a>
+      <a href="leverage.html" onclick="closeMenu()"><span class="nav-icon">📐</span>Leverage</a>
+
+      <div class="mobile-nav-section-title">Company</div>
+      <a href="about.html" onclick="closeMenu()"><span class="nav-icon">🏛️</span>About Us</a>
+      <a href="contact.html" onclick="closeMenu()"><span class="nav-icon">📞</span>Contact Us</a>
+      <a href="careers.html" onclick="closeMenu()"><span class="nav-icon">💼</span>Careers</a>
+      <a href="blog.html" onclick="closeMenu()"><span class="nav-icon">📰</span>Blog</a>
+
+      <div class="mobile-nav-section-title">Legal</div>
+      <a href="client-agreements.html" onclick="closeMenu()"><span class="nav-icon">📄</span>Client Agreements</a>
+      <a href="privacy-policy.html" onclick="closeMenu()"><span class="nav-icon">🔒</span>Privacy Policy</a>
+      <a href="execution-policy.html" onclick="closeMenu()"><span class="nav-icon">⚡</span>Execution Policy</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <button class="btn-register-full">Open Account</button>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -1170,8 +1280,27 @@
     }
 
     function toggleMenu() {
-      // Mobile menu toggle placeholder
+      const nav = document.getElementById('mobileNav');
+      const overlay = document.getElementById('mobileOverlay');
+      const isOpen = nav.classList.contains('open');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        nav.classList.add('open');
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
     }
+
+    function closeMenu() {
+      document.getElementById('mobileNav').classList.remove('open');
+      document.getElementById('mobileOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMenu();
+    });
 
     // Scroll reveal animation
     function revealOnScroll() {
