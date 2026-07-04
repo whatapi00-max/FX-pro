@@ -438,8 +438,7 @@
     .hero-bg::before {
       content: '';
       position: absolute; inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1920&h=1080&fit=crop');
-      background-size: cover; background-position: center right;
+      background: linear-gradient(135deg, rgba(0,102,255,0.1) 0%, rgba(0,30,90,0.2) 100%);
       opacity: 0.35;
     }
     .hero-bg::after {
@@ -1078,21 +1077,21 @@
       <p>Choose from multiple account types, each suited to a different type of trader.</p>
       <div class="account-types">
       <div class="account-card featured">
-        <img src="https://images.unsplash.com/photo-1460925895917-adf4e565db18?w=280&h=120&fit=crop" alt="Standard Account" class="account-card-img" style="width:100%;border-radius:4px;margin-bottom:12px;" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22120%22><rect width=%22280%22 height=%22120%22 fill=%22%230066ff%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22 font-weight=%22bold%22>Standard</text></svg>'" />
+        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='120'><rect width='280' height='120' fill='%230066ff'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='20' font-weight='bold'>Standard Account</text></svg>" alt="Standard Account" class="account-card-img" style="width:100%;border-radius:4px;margin-bottom:12px;" />
         <h3>Standard</h3>
         <div class="type-label">Account</div>
         <p>Our Standard Account offers competitive trading conditions and is available to all types of traders.</p>
         <button class="btn-open" onclick="location.href='contact.html'">Open Account</button>
       </div>
       <div class="account-card">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=280&h=120&fit=crop" alt="Premium Account" class="account-card-img" style="width:100%;border-radius:4px;margin-bottom:12px;" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22120%22><rect width=%22280%22 height=%22120%22 fill=%22gold%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22black%22 font-size=%2216%22 font-weight=%22bold%22>Premium</text></svg>'" />
+        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='120'><rect width='280' height='120' fill='gold'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='black' font-size='20' font-weight='bold'>Premium Account</text></svg>" alt="Premium Account" class="account-card-img" style="width:100%;border-radius:4px;margin-bottom:12px;" />
         <h3>Premium</h3>
         <div class="type-label">Account</div>
         <p>Enhanced trading conditions with tighter spreads and priority support for serious traders.</p>
         <button class="btn-open" onclick="location.href='contact.html'">Open Account</button>
       </div>
       <div class="account-card">
-        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=280&h=120&fit=crop" alt="VIP Account" class="account-card-img" style="width:100%;border-radius:4px;margin-bottom:12px;" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22120%22><rect width=%22280%22 height=%22120%22 fill=%22%23001e5a%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22gold%22 font-size=%2216%22 font-weight=%22bold%22>VIP</text></svg>'" />
+        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='120'><rect width='280' height='120' fill='%23001e5a'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='gold' font-size='20' font-weight='bold'>VIP Account</text></svg>" alt="VIP Account" class="account-card-img" style="width:100%;border-radius:4px;margin-bottom:12px;" />
         <h3>VIP</h3>
         <div class="type-label">Account</div>
         <p>Exclusive benefits with ultra-tight spreads, dedicated account manager, and premium features.</p>
@@ -1181,7 +1180,7 @@
       <ul>
       <li class="instrument-item reveal">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=40&h=40&fit=crop" alt="Forex" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22%230066ff%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2210%22 font-weight=%22bold%22>FX</text></svg>'" />
+          <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='%230066ff'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='24' font-weight='bold'>FX</text></svg>" alt="Forex" />
           <h3>Forex</h3>
         </div>
         <p>Trade 70 major, minor &amp; exotic currency pairs with competitive trading conditions.</p>
@@ -1192,7 +1191,7 @@
       </li>
       <li class="instrument-item reveal">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=40&h=40&fit=crop" alt="Metals" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22gold%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22black%22 font-size=%2210%22 font-weight=%22bold%22>Au</text></svg>'" />
+          <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='gold'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='black' font-size='24' font-weight='bold'>Au</text></svg>" alt="Metals" />
           <h3>Commodity</h3>
         </div>
         <p>Trade metal commodities such as Gold, Silver &amp; Platinum.</p>
@@ -1203,7 +1202,7 @@
       </li>
       <li class="instrument-item reveal">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-          <img src="https://images.unsplash.com/photo-1518546305927-30bbc8299301?w=40&h=40&fit=crop" alt="Crypto" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22orange%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2210%22 font-weight=%22bold%22>₿</text></svg>'" />
+          <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='orange'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='24' font-weight='bold'>₿</text></svg>" alt="Crypto" />
           <h3>Cryptocurrency CFDs</h3>
         </div>
         <p>Trade Bitcoin CFD, Ether CFD, Doge CFD &amp; more crypto CFDs &amp; altcoin CFDs</p>
@@ -1225,7 +1224,7 @@
       </li>
       <li class="instrument-item reveal">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=40&h=40&fit=crop" alt="Shares" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22purple%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2210%22 font-weight=%22bold%22📊</text></svg>'" />
+          <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='purple'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='24' font-weight='bold'>??</text></svg>" alt="Shares" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22purple%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2210%22 font-weight=%22bold%22📊</text></svg>'" />
           <h3>Shares</h3>
         </div>
         <p>Thousands of public companies from the US, UK &amp; EU available to trade.</p>
