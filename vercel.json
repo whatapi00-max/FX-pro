@@ -59,6 +59,10 @@
       "destination": "/metals.html"
     },
     {
+      "source": "/crypto-trading",
+      "destination": "/crypto.html"
+    },
+    {
       "source": "/:path*",
       "destination": "/:path*.html"
     }

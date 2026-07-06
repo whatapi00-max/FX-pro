@@ -89,7 +89,7 @@
             "name": "What instruments can I trade on FX777?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "FX777 offers CFD trading on Forex pairs, indices, shares, metals, energy, and futures. Trade over 300 instruments with competitive spreads."
+              "text": "FX777 offers CFD trading on Forex pairs, indices, shares, commodities, crypto, and futures. Trade over 300 instruments with competitive spreads."
             }
           },
           {
@@ -795,7 +795,7 @@
           <li><a href="/indices-trading">Indices Trading</a> – Global stock indices</li>
           <li><a href="/shares-cfd-trading">Shares Trading</a> – US, UK and EU companies</li>
           <li><a href="/commodity-trading">Commodity Trading</a> – Gold, Silver, Platinum</li>
-          <li><a href="/commodity-trading">Energy Trading</a> – Oil and Natural Gas</li>
+          <li><a href="/crypto-trading">Cryptocurrency Trading</a> – Bitcoin, Ethereum and altcoins</li>
           <li><a href="/futures">Futures Trading</a> – Commodity and index futures</li>
         </ul>
       </section>
@@ -847,7 +847,7 @@
       <a href="/indices-trading" onclick="closeMenu()"><span class="nav-icon">📊</span>Indices</a>
       <a href="/shares-cfd-trading" onclick="closeMenu()"><span class="nav-icon">🏢</span>Shares</a>
       <a href="/commodity-trading" onclick="closeMenu()"><span class="nav-icon">🥇</span>Commodity</a>
-      <a href="/commodity-trading" onclick="closeMenu()"><span class="nav-icon">🛢️</span>Energy</a>
+      <a href="/crypto-trading" onclick="closeMenu()"><span class="nav-icon">₿</span>Crypto</a>
 
       <div class="mobile-nav-section-title">Tools &amp; Pricing</div>
       <a href="/trading-tools" onclick="closeMenu()"><span class="nav-icon">🔧</span>Trading Tools</a>
@@ -901,7 +901,6 @@
       <button class="market-tab" onclick="switchTab('metals', this)">Commodity</button>
       <button class="market-tab" onclick="switchTab('indices', this)">Indices</button>
       <button class="market-tab" onclick="switchTab('futures', this)">Futures</button>
-      <button class="market-tab" onclick="switchTab('energy', this)">Energy</button>
       <button class="market-tab" onclick="switchTab('shares', this)">Shares</button>
       <button class="market-tab" onclick="switchTab('etfs', this)">ETFs <sup>new</sup></button>
       </div>
@@ -1071,13 +1070,13 @@
       </div>
     </div>
 
-    <!-- Energy Tab -->
-    <div class="ticker-wrapper tab-panel" id="tab-energy">
+    <!-- Crypto Tab -->
+    <div class="ticker-wrapper tab-panel" id="tab-crypto">
       <div class="container">
         <ul class="ticker-list">
-        <li class="ticker-item"><span class="ticker-arrow down">↓</span><div><div class="ticker-name">WTI</div><div class="ticker-prices">75.126 / 75.096</div><div class="ticker-spread">Spread: 30</div></div></li>
-        <li class="ticker-item"><span class="ticker-arrow down">↓</span><div><div class="ticker-name">BRENT</div><div class="ticker-prices">78.67 / 78.64</div><div class="ticker-spread">Spread: 30</div></div></li>
-        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">NAT.GAS</div><div class="ticker-prices">3.337 / 3.318</div><div class="ticker-spread">Spread: 19</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">BTCUSD</div><div class="ticker-prices">67245.20 / 67210.50</div><div class="ticker-spread">Spread: 35</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow down">↓</span><div><div class="ticker-name">ETHUSD</div><div class="ticker-prices">3520.15 / 3517.65</div><div class="ticker-spread">Spread: 2.50</div></div></li>
+        <li class="ticker-item"><span class="ticker-arrow up">↑</span><div><div class="ticker-name">LTCUSD</div><div class="ticker-prices">78.45 / 77.95</div><div class="ticker-spread">Spread: 0.50</div></div></li>
         </ul>
       </div>
     </div>
@@ -1235,6 +1234,17 @@
       </li>
       <li class="instrument-item reveal">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+          <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='orange'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='24' font-weight='bold'>₿</text></svg>" alt="Crypto" />
+          <h3>Cryptocurrency CFDs</h3>
+        </div>
+        <p>Trade Bitcoin CFD, Ether CFD, Doge CFD &amp; more crypto CFDs &amp; altcoin CFDs</p>
+        <button class="btn-trade" onclick="location.href='/crypto-trading'">
+          Trade crypto
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </li>
+      <li class="instrument-item reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
           <div style="width:40px;height:40px;background:#00b050;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">📈</div>
           <h3>Indices</h3>
         </div>
@@ -1257,12 +1267,12 @@
       </li>
       <li class="instrument-item reveal">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-          <div style="width:40px;height:40px;background:#e03030;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">⚡</div>
-          <h3>Energy</h3>
+          <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='orange'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='24' font-weight='bold'>₿</text></svg>" alt="Crypto" />
+          <h3>Cryptocurrency</h3>
         </div>
-        <p>Discover opportunities on UK &amp; US Crude Oil and Natural Gas Spot and Future contracts.</p>
-        <button class="btn-trade" onclick="location.href='/commodity-trading'">
-          Trade energy
+        <p>Trade Bitcoin, Ethereum, Dogecoin and other cryptocurrency CFDs 24/7.</p>
+        <button class="btn-trade" onclick="location.href='/crypto-trading'">
+          Trade crypto
           <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
       </li>
@@ -1276,7 +1286,7 @@
       <h2>Trade Like A Pro!</h2>
       <p>
       Trade CFDs on a wide range of instruments, including popular
-      FX pairs, Futures, Indices, Metals, Energy, Shares and ETFs
+      FX pairs, Futures, Indices, Commodities, Crypto, Shares and ETFs
       and experience the global markets at your fingertips.
       </p>
       <button class="btn-primary animate-pulse" onclick="location.href='/contact'">Register</button>
@@ -1312,7 +1322,7 @@
           <li><a href="/indices-trading">Indices</a></li>
           <li><a href="/shares-cfd-trading">Shares</a></li>
           <li><a href="/commodity-trading">Commodity</a></li>
-          <li><a href="/commodity-trading">Energy</a></li>
+          <li><a href="/crypto-trading">Crypto</a></li>
         </ul>
       </div>
       <div class="footer-nav-section">
@@ -1457,6 +1467,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
