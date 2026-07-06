@@ -11,6 +11,26 @@
       "permanent": true
     },
     {
+      "source": "/indices",
+      "destination": "/indices-trading",
+      "permanent": true
+    },
+    {
+      "source": "/shares",
+      "destination": "/shares-cfd-trading",
+      "permanent": true
+    },
+    {
+      "source": "/energy",
+      "destination": "/commodity-trading",
+      "permanent": true
+    },
+    {
+      "source": "/energy-trading",
+      "destination": "/commodity-trading",
+      "permanent": true
+    },
+    {
       "source": "/metals",
       "destination": "/commodity-trading",
       "permanent": true
@@ -25,6 +45,14 @@
     {
       "source": "/forex-trading",
       "destination": "/forex.html"
+    },
+    {
+      "source": "/indices-trading",
+      "destination": "/indices.html"
+    },
+    {
+      "source": "/shares-cfd-trading",
+      "destination": "/shares.html"
     },
     {
       "source": "/commodity-trading",
