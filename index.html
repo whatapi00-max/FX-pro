@@ -148,9 +148,9 @@
       --font: 'Inter', sans-serif;
     }
 
-    html, body { width: 100%; }
+    html, body { width: 100%; height: 100%; }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font); background: #fff; color: #111; font-size: 14px; overflow-x: hidden; padding-bottom: 62px; }
+    body { font-family: var(--font); background: #fff; color: #111; font-size: 14px; overflow-x: hidden; padding-bottom: 62px; position: relative; }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
     ul, ol { list-style: none; }
@@ -353,14 +353,14 @@
 
     /* ===== MOBILE NAV DRAWER ===== */
     .mobile-nav-overlay {
-      display: none;
       position: fixed; inset: 0;
       background: rgba(0,0,0,0.55);
       z-index: 999;
       opacity: 0;
+      pointer-events: none;
       transition: opacity 0.3s ease;
     }
-    .mobile-nav-overlay.open { display: block; opacity: 1; }
+    .mobile-nav-overlay.open { opacity: 1; pointer-events: auto; }
 
     .mobile-nav {
       position: fixed; top: 0; right: -100%;
