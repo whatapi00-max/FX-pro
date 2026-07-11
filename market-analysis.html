@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Analysis | fx777</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --blue: #0066ff;
+      --dark: #0a0a1a;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    .header {
+      background: #fff;
+      border-bottom: 1px solid #e8e8e8;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--blue);
+      text-decoration: none;
+    }
+    .nav-link {
+      color: #333;
+      text-decoration: none;
+      margin-left: 24px;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: var(--blue);
+    }
+    .hero {
+      background: var(--dark);
+      color: #fff;
+      padding: 80px 16px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 16px;
+      color: #aab8d0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 48px 16px;
+    }
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .analysis-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #e8e8e8;
+    }
+    .analysis-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .pair {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111;
+    }
+    .trend {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .trend.up {
+      background: #e8f5e9;
+      color: #00b050;
+    }
+    .trend.down {
+      background: #ffebee;
+      color: #e74c3c;
+    }
+    .price {
+      font-size: 32px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 8px;
+    }
+    .change {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .change.positive {
+      color: #00b050;
+    }
+    .change.negative {
+      color: #e74c3c;
+    }
+    .analysis-text {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .indicators {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .indicator {
+      background: #f8f9fa;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .indicator strong {
+      color: var(--blue);
+    }
+    @media (min-width: 640px) {
+      .analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .analysis-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">fx777</a>
+      <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="market-analysis.html" class="nav-link">Market Analysis</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Market Analysis</h1>
+    <p>Comprehensive technical and fundamental analysis for major trading instruments</p>
+  </section>
+
+  <div class="container">
+    <h2 class="section-title">Currency Pairs</h2>
+    <div class="analysis-grid">
+      <div class="analysis-card">
+        <div class="analysis-header">
+          <div class="pair">EUR/USD</div>
+          <span class="trend up">Bullish</span>
+        </div>
+        <div class="price">1.0876</div>
+        <div class="change positive">+0.45% today</div>
+        <p class="analysis-text">EUR/USD continues its upward momentum as the Euro strengthens against the Dollar. Key resistance at 1.0900, support at 1.0850. RSI indicates bullish momentum.</p>
+        <div class="indicators">
+          <span class="indicator"><strong>RSI:</strong> 62</span>
+          <span class="indicator"><strong>MACD:</strong> Bullish</span>
+          <span class="indicator"><strong>MA:</strong> Above 200</span>
+        </div>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-header">
+          <div class="pair">GBP/USD</div>
+          <span class="trend down">Bearish</span>
+        </div>
+        <div class="price">1.2634</div>
+        <div class="change negative">-0.32% today</div>
+        <p class="analysis-text">GBP/USD faces selling pressure as UK economic data shows signs of slowing. Support level at 1.2600 critical. Watch for breakout below this level.</p>
+        <div class="indicators">
+          <span class="indicator"><strong>RSI:</strong> 38</span>
+          <span class="indicator"><strong>MACD:</strong> Bearish</span>
+          <span class="indicator"><strong>MA:</strong> Below 50</span>
+        </div>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-header">
+          <div class="pair">USD/JPY</div>
+          <span class="trend up">Bullish</span>
+        </div>
+        <div class="price">149.87</div>
+        <div class="change positive">+0.28% today</div>
+        <p class="analysis-text">USD/JPY gains as Dollar strengthens amid Fed rate expectations. Resistance at 150.00 psychological level. BOJ intervention risk remains elevated.</p>
+        <div class="indicators">
+          <span class="indicator"><strong>RSI:</strong> 58</span>
+          <span class="indicator"><strong>MACD:</strong> Bullish</span>
+          <span class="indicator"><strong>MA:</strong> Above 100</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top: 48px;">Commodities</h2>
+    <div class="analysis-grid">
+      <div class="analysis-card">
+        <div class="analysis-header">
+          <div class="pair">XAU/USD (Gold)</div>
+          <span class="trend up">Bullish</span>
+        </div>
+        <div class="price">2,342.50</div>
+        <div class="change positive">+1.12% today</div>
+        <p class="analysis-text">Gold hits new all-time high as safe-haven demand increases. Geopolitical tensions and inflation concerns drive buying. Next target at 2,400.</p>
+        <div class="indicators">
+          <span class="indicator"><strong>RSI:</strong> 72</span>
+          <span class="indicator"><strong>MACD:</strong> Strong Bullish</span>
+          <span class="indicator"><strong>MA:</strong> Above 50</span>
+        </div>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-header">
+          <div class="pair">XAG/USD (Silver)</div>
+          <span class="trend up">Bullish</span>
+        </div>
+        <div class="price">28.45</div>
+        <div class="change positive">+0.89% today</div>
+        <p class="analysis-text">Silver follows gold higher with industrial demand also supporting prices. Resistance at 29.00. Silver-gold ratio at 82, suggesting silver may outperform.</p>
+        <div class="indicators">
+          <span class="indicator"><strong>RSI:</strong> 65</span>
+          <span class="indicator"><strong>MACD:</strong> Bullish</span>
+          <span class="indicator"><strong>MA:</strong> Above 200</span>
+        </div>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-header">
+          <div class="pair">WTI Crude</div>
+          <span class="trend down">Bearish</span>
+        </div>
+        <div class="price">78.32</div>
+        <div class="change negative">-0.54% today</div>
+        <p class="analysis-text">Oil prices decline on demand concerns and rising inventory levels. OPEC+ production cuts providing floor at 75.00. Watch for inventory data.</p>
+        <div class="indicators">
+          <span class="indicator"><strong>RSI:</strong> 42</span>
+          <span class="indicator"><strong>MACD:</strong> Bearish</span>
+          <span class="indicator"><strong>MA:</strong> Below 50</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top: 48px;">Indices</h2>
+    <div class="analysis-grid">
+      <div class="analysis-card">
+        <div class="analysis-header">
+          <div class="pair">US 500 (S&P 500)</div>
+          <span class="trend up">Bullish</span>
+        </div>
+        <div class="price">5,234.18</div>
+        <div class="change positive">+0.67% today</div>
+        <p class="analysis-text">S&P 500 rallies as tech stocks lead gains. Earnings season showing positive surprises. Resistance at 5,250. Support at 5,180.</p>
+        <div class="indicators">
+          <span class="indicator"><strong>RSI:</strong> 60</span>
+          <span class="indicator"><strong>MACD:</strong> Bullish</span>
+          <span class="indicator"><strong>MA:</strong> Above 200</span>
+        </div>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-header">
+          <div class="pair">US 30 (Dow Jones)</div>
+          <span class="trend up">Bullish</span>
+        </div>
+        <div class="price">39,512.84</div>
+        <div class="change positive">+0.45% today</div>
+        <p class="analysis-text">Dow Jones steady as blue-chip stocks perform well. Industrial sector showing strength. Key level at 40,000 psychological resistance.</p>
+        <div class="indicators">
+          <span class="indicator"><strong>RSI:</strong> 55</span>
+          <span class="indicator"><strong>MACD:</strong> Bullish</span>
+          <span class="indicator"><strong>MA:</strong> Above 100</span>
+        </div>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-header">
+          <div class="pair">GER 40 (DAX)</div>
+          <span class="trend down">Bearish</span>
+        </div>
+        <div class="price">18,234.56</div>
+        <div class="change negative">-0.23% today</div>
+        <p class="analysis-text">DAX faces pressure as German manufacturing data disappoints. Support at 18,000 critical. ECB policy meeting next week could provide direction.</p>
+        <div class="indicators">
+          <span class="indicator"><strong>RSI:</strong> 45</span>
+          <span class="indicator"><strong>MACD:</strong> Bearish</span>
+          <span class="indicator"><strong>MA:</strong> Below 50</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
