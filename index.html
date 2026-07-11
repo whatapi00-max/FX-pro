@@ -227,7 +227,7 @@
     }
 
     /* Card hover effects */
-    .account-card, .stat-card, .instrument-item {
+    .account-card, .stat-card, .instrument-card {
       transition: all 0.3s ease;
     }
     .account-card:hover {
@@ -238,7 +238,7 @@
       transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
-    .instrument-item:hover {
+    .instrument-card:hover {
       background: #f8f9ff;
       border-color: var(--blue);
     }
@@ -283,10 +283,10 @@
     }
 
     /* Stats number animation */
-    .stat-card-number {
+    .stat-number {
       transition: all 0.3s ease;
     }
-    .stat-card:hover .stat-card-number {
+    .stat-card:hover .stat-number {
       transform: scale(1.1);
       color: #fff;
     }
@@ -563,62 +563,83 @@
     .app-store-btn .store-name { font-size: 13px; font-weight: 700; }
 
     /* ===== STATS SECTION ===== */
-    .stats-section { padding: 40px 0; width: 100%; background: #000; position: relative; overflow: hidden; }
-    .stats-section .container { padding: 0 16px; position: relative; z-index: 2; }
-    /* Large Fx watermark behind the stat cards */
-    .stats-section::before {
-      content: 'Fx';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 360px; font-weight: 800;
-      color: rgba(0, 60, 160, 0.18);
-      line-height: 1; z-index: 1;
-      pointer-events: none; user-select: none;
-      letter-spacing: -10px;
+    .stats-section { padding: 48px 0; width: 100%; background: #000; }
+    .stats-section .container { padding: 0 16px; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 1280px;
+      margin: 0 auto;
     }
-    .stats-section ul { position: relative; z-index: 2; }
     .stat-card {
-      border-radius: 12px; padding: 24px 20px 20px;
-      margin-bottom: 16px; color: #fff; position: relative; overflow: hidden;
-      min-height: 170px; display: flex; flex-direction: column; justify-content: flex-end;
-      background: #001540;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      background: linear-gradient(135deg, #001240 0%, #0044cc 100%);
+      border-radius: 12px;
+      padding: 24px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
     }
-    .stat-card::before {
-      content: '';
-      position: absolute; top: 0; right: 0; width: 55%; height: 100%;
-      background: linear-gradient(135deg, transparent 30%, rgba(0,60,140,0.6) 100%);
-    }
-    .stat-card:nth-child(1) { background: linear-gradient(135deg, #001240 0%, #0044cc 100%); }
     .stat-card:nth-child(2) { background: linear-gradient(135deg, #001540 0%, #0055dd 100%); }
     .stat-card:nth-child(3) { background: linear-gradient(135deg, #001240 0%, #0040bb 100%); }
     .stat-card:nth-child(4) { background: linear-gradient(135deg, #000e30 0%, #003299 100%); }
-    .stat-icon { display: block; margin: 0 auto 12px; }
-    .stat-card-label {
-      font-size: 10px; font-weight: 600; text-transform: uppercase;
-      color: #aab8d0; letter-spacing: 1px; margin-bottom: 4px;
-    }
-    .stat-card-number { font-size: 40px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 4px; }
-    .stat-card-title { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 8px; }
-    .stat-card-desc { font-size: 11px; color: #aab8d0; line-height: 1.5; }
-    .stat-card-desc a { color: #6699ff; text-decoration: underline; }
+    .stat-icon { font-size: 36px; margin-bottom: 12px; }
+    .stat-number { font-size: 36px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 4px; }
+    .stat-label { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .stat-card p { font-size: 13px; color: #aab8d0; line-height: 1.5; }
 
     /* ===== TRADING INSTRUMENTS ===== */
-    .instruments-section { padding: 24px 0 8px; width: 100%; background: #fff; }
+    .instruments-section { padding: 48px 0; width: 100%; background: #fff; }
     .instruments-section .container { padding: 0 16px; }
-    .instruments-section > ul > li:first-child { padding-top: 0; }
-    .instrument-item { padding: 16px; margin-bottom: 12px; background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; }
-    .instrument-item > div { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-    .instrument-item > div img { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
-    .instrument-item h3 { font-size: 16px; font-weight: 800; color: #111; margin: 0; }
-    .instrument-item p { font-size: 13px; color: #333; line-height: 1.5; margin-bottom: 12px; font-weight: 400; }
-    .btn-trade {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--blue); color: #fff; padding: 10px 20px;
-      border-radius: 4px; font-size: 13px; font-weight: 600;
+    .instruments-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 1280px;
+      margin: 0 auto;
     }
-    .btn-trade svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .instrument-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
+    }
+    .instrument-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 4px 16px rgba(0,102,255,0.1);
+      transform: translateY(-2px);
+    }
+    .instrument-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .instrument-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .instrument-card h3 { font-size: 17px; font-weight: 800; color: #111; }
+    .instrument-card p { font-size: 13px; color: #444; line-height: 1.5; margin-bottom: 14px; }
+    .btn-trade {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+    }
 
     /* ===== TRADE LIKE A PRO ===== */
     .pro-section {
@@ -688,12 +709,9 @@
       .btn-primary, .btn-secondary { width: auto; min-width: 200px; }
       .account-types { justify-content: center; }
       .account-card { min-width: 180px; }
-      .stats-section { padding: 48px 0; }
-      .stats-section::before { display: none; }
-      .stats-section ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .stat-card { margin-bottom: 0; }
-      .instruments-section ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .instrument-item { margin-bottom: 0; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .stat-number { font-size: 42px; }
+      .instruments-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
     }
 
     /* Tablets (768px+) */
@@ -719,13 +737,13 @@
       .app-store-btns { flex-direction: row; flex-wrap: wrap; }
       .app-store-btn { width: auto; }
       .stats-section { padding: 56px 0; }
-      .stats-section ul { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
       .stat-card { padding: 28px; }
-      .stat-card-number { font-size: 42px; }
-      .instruments-section { padding: 48px 0; }
-      .instruments-section ul { grid-template-columns: repeat(3, 1fr); gap: 20px; }
-      .instrument-item { padding: 22px; }
-      .instrument-item h3 { font-size: 17px; }
+      .stat-number { font-size: 44px; }
+      .instruments-section { padding: 56px 0; }
+      .instruments-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .instrument-card { padding: 22px; }
+      .instrument-card h3 { font-size: 18px; }
       .pro-section { padding: 56px 0; }
       .pro-section h2 { font-size: 34px; }
       .footer-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -750,12 +768,12 @@
       .account-card { padding: 16px; }
       .mobile-app-img { max-width: 320px; }
       .stats-section { padding: 64px 0; }
-      .stats-section ul { grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
-      .stat-card { padding: 32px; min-height: 200px; }
-      .stat-card-number { font-size: 46px; }
-      .stats-section::before { font-size: 450px; }
-      .instruments-section ul { grid-template-columns: repeat(5, 1fr); gap: 20px; }
-      .instrument-item { padding: 20px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1000px; }
+      .stat-card { padding: 32px; }
+      .stat-number { font-size: 48px; }
+      .instruments-section { padding: 64px 0; }
+      .instruments-grid { grid-template-columns: repeat(5, 1fr); gap: 20px; }
+      .instrument-card { padding: 22px; }
       .pro-section h2 { font-size: 40px; }
       .footer-top { grid-template-columns: repeat(4, 1fr); }
       .footer-nav { grid-template-columns: repeat(4, 1fr); }
@@ -764,10 +782,10 @@
     /* Large Desktop (1280px+) */
     @media (min-width: 1280px) {
       .container { padding: 0 24px; }
-      .stats-section ul { grid-template-columns: repeat(4, 1fr); max-width: 1280px; }
-      .stat-card { min-height: 220px; }
-      .instruments-section ul { grid-template-columns: repeat(5, 1fr); gap: 24px; }
-      .instrument-item { padding: 24px; }
+      .stats-grid { grid-template-columns: repeat(4, 1fr); max-width: 1280px; }
+      .stat-card { padding: 36px; }
+      .instruments-grid { grid-template-columns: repeat(5, 1fr); gap: 24px; }
+      .instrument-card { padding: 24px; }
     }
 
     /* ===== APP BANNER ===== */
@@ -1172,110 +1190,80 @@
   <!-- Stats Section -->
   <section class="stats-section reveal">
     <div class="container">
-      <ul>
-      <li class="stat-card animate-fade-in-up">
-        <img src="images/clients.png" alt="Clients" class="stat-icon" style="width:60px;height:60px;margin-bottom:8px;border-radius:50%;object-fit:cover;" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><circle cx=%2230%22 cy=%2230%22 r=%2230%22 fill=%22%230066ff%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2212%22 font-weight=%22bold%22>👥</text></svg>'" />
-        <div class="stat-card-label">Clients</div>
-        <div class="stat-card-number">17,200,000</div>
-        <div class="stat-card-title">client accounts</div>
-        <div class="stat-card-desc">
-          fx777 has been providing online trading services to clients
-          since 1999 and it currently serves 173 countries worldwide.
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <div class="stat-number">17,200,000</div>
+          <div class="stat-label">Client Accounts</div>
+          <p>Providing online trading services since 1999, serving 173 countries worldwide.</p>
         </div>
-      </li>
-      <li class="stat-card animate-fade-in-up">
-        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><circle cx='30' cy='30' r='30' fill='gold'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='24' font-weight='bold'>🏆</text></svg>" alt="Awards" class="stat-icon" style="width:60px;height:60px;margin-bottom:8px;border-radius:50%;object-fit:cover;" />
-        <div class="stat-card-label">Awards</div>
-        <div class="stat-card-number">141+</div>
-        <div class="stat-card-title">awards</div>
-        <div class="stat-card-desc">
-          fx777 has received constant recognition in the industry, winning
-          over 141 international awards to date for the quality of its services.
+        <div class="stat-card">
+          <div class="stat-icon">🏆</div>
+          <div class="stat-number">141+</div>
+          <div class="stat-label">International Awards</div>
+          <p>Constant industry recognition for quality trading services and execution.</p>
         </div>
-      </li>
-      <li class="stat-card animate-fade-in-up">
-        <img src="images/clients.png" alt="Customer Service" class="stat-icon" style="width:60px;height:60px;margin-bottom:8px;border-radius:50%;object-fit:cover;" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><circle cx=%2230%22 cy=%2230%22 r=%2230%22 fill=%22%230066ff%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2212%22 font-weight=%22bold%22>💬</text></svg>'" />
-        <div class="stat-card-label">Customer</div>
-        <div class="stat-card-number">5-star</div>
-        <div class="stat-card-title">customer service</div>
-        <div class="stat-card-desc">
-          Our dedicated, multilingual customer service team works 24/5 to provide you with an exceptional level of support.
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-number">5-Star</div>
+          <div class="stat-label">Customer Service</div>
+          <p>Dedicated multilingual support team available 24/5 for all traders.</p>
         </div>
-      </li>
-      <li class="stat-card animate-fade-in-up">
-        <img src="images/regulations.png" alt="Regulations" class="stat-icon" style="width:60px;height:60px;margin-bottom:8px;border-radius:50%;object-fit:cover;" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><circle cx=%2230%22 cy=%2230%22 r=%2230%22 fill=%22%230066ff%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2212%22 font-weight=%22bold%22>🏛️</text></svg>'" />
-        <div class="stat-card-label">Regulations</div>
-        <div class="stat-card-number">4</div>
-        <div class="stat-card-title"></div>
-        <div class="stat-card-desc">
-          fx777 is well-known throughout the industry as a trustworthy and reliable broker. We are regulated by the
-          FCA, CySEC and SCB.
+        <div class="stat-card">
+          <div class="stat-icon">🏛️</div>
+          <div class="stat-number">4</div>
+          <div class="stat-label">Global Regulations</div>
+          <p>Regulated by FCA, CySEC, and SCB across multiple jurisdictions.</p>
         </div>
-      </li>
-    </ul>
+      </div>
     </div>
   </section>
 
   <!-- Trading Instruments -->
   <section class="instruments-section reveal">
     <div class="container">
-      <ul>
-      <li class="instrument-item reveal">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-          <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='%230066ff'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='24' font-weight='bold'>FX</text></svg>" alt="Forex" />
-          <h3>Forex</h3>
+      <div class="instruments-grid">
+        <div class="instrument-card">
+          <div class="instrument-header">
+            <div class="instrument-icon" style="background:#0066ff;">FX</div>
+            <h3>Forex</h3>
+          </div>
+          <p>Trade 70+ major, minor &amp; exotic currency pairs with competitive spreads.</p>
+          <a href="/forex-trading" class="btn-trade">Trade forex →</a>
         </div>
-        <p>Trade 70 major, minor &amp; exotic currency pairs with competitive trading conditions.</p>
-        <a href="/forex-trading" class="btn-trade">
-          Trade forex
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </li>
-      <li class="instrument-item reveal">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-          <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='gold'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='black' font-size='24' font-weight='bold'>Au</text></svg>" alt="Commodity" />
-          <h3>Commodity Trading</h3>
+        <div class="instrument-card">
+          <div class="instrument-header">
+            <div class="instrument-icon" style="background:#d4af37;">Au</div>
+            <h3>Commodities</h3>
+          </div>
+          <p>Trade Gold, Silver, Platinum and other metal commodities CFDs.</p>
+          <a href="/commodity-trading" class="btn-trade">Trade commodities →</a>
         </div>
-        <p>Trade metal commodities such as Gold, Silver &amp; Platinum.</p>
-        <a href="/commodity-trading" class="btn-trade">
-          Trade commodities
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </li>
-      <li class="instrument-item reveal">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-          <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='orange'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='24' font-weight='bold'>₿</text></svg>" alt="Crypto" />
-          <h3>Cryptocurrency CFDs</h3>
+        <div class="instrument-card">
+          <div class="instrument-header">
+            <div class="instrument-icon" style="background:#f7931a;">₿</div>
+            <h3>Crypto CFDs</h3>
+          </div>
+          <p>Trade Bitcoin, Ethereum, Dogecoin and leading altcoin CFDs.</p>
+          <a href="/crypto-trading" class="btn-trade">Trade crypto →</a>
         </div>
-        <p>Trade Bitcoin CFD, Ether CFD, Doge CFD &amp; more crypto CFDs &amp; altcoin CFDs</p>
-        <a href="/crypto-trading" class="btn-trade">
-          Trade crypto
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </li>
-      <li class="instrument-item reveal">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-          <div style="width:40px;height:40px;background:#00b050;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">📈</div>
-          <h3>Indices</h3>
+        <div class="instrument-card">
+          <div class="instrument-header">
+            <div class="instrument-icon" style="background:#00b050;">📈</div>
+            <h3>Indices</h3>
+          </div>
+          <p>Access major Index CFDs Spot and Futures from around the globe.</p>
+          <a href="/indices-trading" class="btn-trade">Trade indices →</a>
         </div>
-        <p>Index CFDs Spot and Futures from around the globe.</p>
-        <a href="/indices-trading" class="btn-trade">
-          Trade indices
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </li>
-      <li class="instrument-item reveal">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-          <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='purple'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='24' font-weight='bold'>??</text></svg>" alt="Shares" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22purple%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2210%22 font-weight=%22bold%22📊</text></svg>'" />
-          <h3>Shares</h3>
+        <div class="instrument-card">
+          <div class="instrument-header">
+            <div class="instrument-icon" style="background:#8e44ad;">📊</div>
+            <h3>Shares</h3>
+          </div>
+          <p>Trade thousands of public companies from the US, UK and EU markets.</p>
+          <a href="/shares-cfd-trading" class="btn-trade">Trade shares →</a>
         </div>
-        <p>Thousands of public companies from the US, UK &amp; EU available to trade.</p>
-        <a href="/shares-cfd-trading" class="btn-trade">
-          Trade shares
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </li>
-    </ul>
+      </div>
     </div>
   </section>
 
