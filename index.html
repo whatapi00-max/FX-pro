@@ -625,6 +625,61 @@
     .market-card h3 { font-size: 18px; font-weight: 800; color: #111; margin-bottom: 8px; }
     .market-card p { font-size: 13px; color: #555; line-height: 1.5; }
 
+    /* ===== WHY CHOOSE US ===== */
+    .why-choose-section { padding: 48px 0; width: 100%; background: #fff; }
+    .why-choose-section .container { padding: 0 16px; }
+    .why-choose-section h2 { font-size: 24px; font-weight: 800; color: #111; margin-bottom: 8px; text-align: center; }
+    .why-choose-section > .container > p { font-size: 14px; color: #666; text-align: center; margin-bottom: 32px; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .feature-item {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .feature-icon { font-size: 36px; margin-bottom: 12px; }
+    .feature-item h3 { font-size: 16px; font-weight: 700; color: #111; margin-bottom: 8px; }
+    .feature-item p { font-size: 13px; color: #555; line-height: 1.5; }
+
+    /* ===== MARKET NEWS ===== */
+    .news-section { padding: 48px 0; width: 100%; background: #f8f9fa; }
+    .news-section .container { padding: 0 16px; }
+    .news-section h2 { font-size: 24px; font-weight: 800; color: #111; margin-bottom: 8px; text-align: center; }
+    .news-section > .container > p { font-size: 14px; color: #666; text-align: center; margin-bottom: 32px; }
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .news-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #e8e8e8;
+    }
+    .news-date {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .news-item h3 { font-size: 16px; font-weight: 700; color: #111; margin-bottom: 8px; }
+    .news-item p { font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 12px; }
+    .news-link { color: var(--blue); font-weight: 600; text-decoration: none; }
+    .news-link:hover { text-decoration: underline; }
+
     /* ===== FOOTER ===== */
     footer { background: #fff; padding: 0 0 20px; width: 100%; }
     .footer-nav, .footer-disclaimer { max-width: 1280px; margin: 0 auto; }
@@ -672,6 +727,8 @@
       .account-types { justify-content: center; }
       .account-card { min-width: 180px; }
       .markets-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .news-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
     }
 
     /* Tablets (768px+) */
@@ -698,6 +755,12 @@
       .markets-section { padding: 56px 0; }
       .markets-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
       .market-card { padding: 28px; }
+      .why-choose-section { padding: 56px 0; }
+      .why-choose-section h2 { font-size: 28px; }
+      .features-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .news-section { padding: 56px 0; }
+      .news-section h2 { font-size: 28px; }
+      .news-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
       .footer-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
       .footer-nav-section { border-bottom: none; }
       .footer-nav-toggle { display: none; }
@@ -720,6 +783,12 @@
       .markets-section { padding: 64px 0; }
       .markets-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
       .market-card { padding: 32px; }
+      .why-choose-section { padding: 64px 0; }
+      .why-choose-section h2 { font-size: 32px; }
+      .features-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .news-section { padding: 64px 0; }
+      .news-section h2 { font-size: 32px; }
+      .news-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
       .footer-nav { grid-template-columns: repeat(4, 1fr); }
     }
 
@@ -728,6 +797,8 @@
       .container { padding: 0 24px; }
       .markets-grid { grid-template-columns: repeat(6, 1fr); gap: 20px; }
       .market-card { padding: 28px; }
+      .features-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .news-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
     }
 
     /* ===== APP BANNER ===== */
@@ -1162,6 +1233,74 @@
             </svg>
             <span>Download for Android</span>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose-section reveal">
+    <div class="container">
+      <h2>Why Choose fx777</h2>
+      <p>Experience the advantages of trading with a globally recognized broker</p>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure Trading</h3>
+          <p>Your funds are protected with segregated accounts and advanced security measures</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <h3>Fast Execution</h3>
+          <p>Lightning-fast order execution with low latency and minimal slippage</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💰</div>
+          <h3>Low Spreads</h3>
+          <p>Competitive spreads starting from 0.0 pips on major currency pairs</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🌍</div>
+          <h3>Global Access</h3>
+          <p>Trade 24/5 on markets across 173 countries worldwide</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📊</div>
+          <h3>Advanced Tools</h3>
+          <p>Access professional trading platforms and analytical tools</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎓</div>
+          <h3>Education</h3>
+          <p>Free educational resources and market analysis for all traders</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market News -->
+  <section class="news-section reveal">
+    <div class="container">
+      <h2>Market News</h2>
+      <p>Stay updated with the latest market trends and analysis</p>
+      <div class="news-grid">
+        <div class="news-item">
+          <div class="news-date">Today</div>
+          <h3>Fed Signals Potential Rate Cut in Q2</h3>
+          <p>Markets react positively as Federal Reserve hints at monetary policy adjustments...</p>
+          <a href="#" class="news-link">Read more →</a>
+        </div>
+        <div class="news-item">
+          <div class="news-date">Yesterday</div>
+          <h3>Gold Reaches New All-Time High</h3>
+          <p>Precious metals surge as investors seek safe-haven assets amid uncertainty...</p>
+          <a href="#" class="news-link">Read more →</a>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2 days ago</div>
+          <h3>EUR/USD Volatility Expected to Increase</h3>
+          <p>Analysts predict heightened currency pair movement ahead of ECB meeting...</p>
+          <a href="#" class="news-link">Read more →</a>
         </div>
       </div>
     </div>
