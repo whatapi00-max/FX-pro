@@ -562,59 +562,6 @@
     .app-store-btn .store-text { font-size: 9px; color: #aaa; }
     .app-store-btn .store-name { font-size: 13px; font-weight: 700; }
 
-    /* ===== TRADING INSTRUMENTS ===== */
-    .instruments-section { padding: 48px 0; width: 100%; background: #fff; }
-    .instruments-section .container { padding: 0 16px; }
-    .instruments-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-    .instrument-card {
-      background: #fff;
-      border: 1px solid #e8e8e8;
-      border-radius: 10px;
-      padding: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      transition: all 0.2s ease;
-    }
-    .instrument-card:hover {
-      border-color: var(--blue);
-      box-shadow: 0 4px 16px rgba(0,102,255,0.1);
-      transform: translateY(-2px);
-    }
-    .instrument-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-    .instrument-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-    .instrument-card h3 { font-size: 17px; font-weight: 800; color: #111; }
-    .instrument-card p { font-size: 13px; color: #444; line-height: 1.5; margin-bottom: 14px; }
-    .btn-trade {
-      display: inline-block;
-      background: var(--blue);
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
     /* ===== TRADE LIKE A PRO ===== */
     .pro-section {
       background: #0a0a1a; padding: 40px 0 48px; text-align: center; color: #fff; width: 100%;
@@ -683,7 +630,6 @@
       .btn-primary, .btn-secondary { width: auto; min-width: 200px; }
       .account-types { justify-content: center; }
       .account-card { min-width: 180px; }
-      .instruments-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
     }
 
     /* Tablets (768px+) */
@@ -708,10 +654,6 @@
       .mobile-app-img { max-width: 280px; margin: 0; }
       .app-store-btns { flex-direction: row; flex-wrap: wrap; }
       .app-store-btn { width: auto; }
-      .instruments-section { padding: 56px 0; }
-      .instruments-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
-      .instrument-card { padding: 22px; }
-      .instrument-card h3 { font-size: 18px; }
       .pro-section { padding: 56px 0; }
       .pro-section h2 { font-size: 34px; }
       .footer-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -735,9 +677,6 @@
       .account-types { grid-template-columns: repeat(3, 1fr); gap: 20px; }
       .account-card { padding: 16px; }
       .mobile-app-img { max-width: 320px; }
-      .instruments-section { padding: 64px 0; }
-      .instruments-grid { grid-template-columns: repeat(5, 1fr); gap: 20px; }
-      .instrument-card { padding: 22px; }
       .pro-section h2 { font-size: 40px; }
       .footer-top { grid-template-columns: repeat(4, 1fr); }
       .footer-nav { grid-template-columns: repeat(4, 1fr); }
@@ -746,8 +685,6 @@
     /* Large Desktop (1280px+) */
     @media (min-width: 1280px) {
       .container { padding: 0 24px; }
-      .instruments-grid { grid-template-columns: repeat(5, 1fr); gap: 24px; }
-      .instrument-card { padding: 24px; }
     }
 
     /* ===== APP BANNER ===== */
@@ -1150,53 +1087,6 @@
   </section>
 
 
-  <!-- Trading Instruments -->
-  <section class="instruments-section reveal">
-    <div class="container">
-      <div class="instruments-grid">
-        <div class="instrument-card">
-          <div class="instrument-header">
-            <div class="instrument-icon" style="background:#0066ff;">FX</div>
-            <h3>Forex</h3>
-          </div>
-          <p>Trade 70+ major, minor &amp; exotic currency pairs with competitive spreads.</p>
-          <a href="/forex-trading" class="btn-trade">Trade forex →</a>
-        </div>
-        <div class="instrument-card">
-          <div class="instrument-header">
-            <div class="instrument-icon" style="background:#d4af37;">Au</div>
-            <h3>Commodities</h3>
-          </div>
-          <p>Trade Gold, Silver, Platinum and other metal commodities CFDs.</p>
-          <a href="/commodity-trading" class="btn-trade">Trade commodities →</a>
-        </div>
-        <div class="instrument-card">
-          <div class="instrument-header">
-            <div class="instrument-icon" style="background:#f7931a;">₿</div>
-            <h3>Crypto CFDs</h3>
-          </div>
-          <p>Trade Bitcoin, Ethereum, Dogecoin and leading altcoin CFDs.</p>
-          <a href="/crypto-trading" class="btn-trade">Trade crypto →</a>
-        </div>
-        <div class="instrument-card">
-          <div class="instrument-header">
-            <div class="instrument-icon" style="background:#00b050;">📈</div>
-            <h3>Indices</h3>
-          </div>
-          <p>Access major Index CFDs Spot and Futures from around the globe.</p>
-          <a href="/indices-trading" class="btn-trade">Trade indices →</a>
-        </div>
-        <div class="instrument-card">
-          <div class="instrument-header">
-            <div class="instrument-icon" style="background:#8e44ad;">📊</div>
-            <h3>Shares</h3>
-          </div>
-          <p>Trade thousands of public companies from the US, UK and EU markets.</p>
-          <a href="/shares-cfd-trading" class="btn-trade">Trade shares →</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Trade Like A Pro -->
   <section class="pro-section reveal">
