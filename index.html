@@ -602,14 +602,14 @@
     .stat-card-desc a { color: #6699ff; text-decoration: underline; }
 
     /* ===== TRADING INSTRUMENTS ===== */
-    .instruments-section { padding: 24px 0 8px; width: 100%; }
+    .instruments-section { padding: 24px 0 8px; width: 100%; background: #fff; }
     .instruments-section .container { padding: 0 16px; }
     .instruments-section > ul > li:first-child { padding-top: 0; }
-    .instrument-item { padding: 16px 0; border-bottom: 1px solid #f0f0f0; }
+    .instrument-item { padding: 16px; margin-bottom: 12px; background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; }
     .instrument-item > div { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
     .instrument-item > div img { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
     .instrument-item h3 { font-size: 16px; font-weight: 800; color: #111; margin: 0; }
-    .instrument-item p { font-size: 12px; color: #666; line-height: 1.5; margin-bottom: 12px; }
+    .instrument-item p { font-size: 13px; color: #333; line-height: 1.5; margin-bottom: 12px; font-weight: 400; }
     .btn-trade {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--blue); color: #fff; padding: 10px 20px;
@@ -718,9 +718,9 @@
       .stat-card-desc { font-size: 10px; }
       .instruments-section { padding: 16px 0; }
       .instruments-section ul { display: flex; flex-direction: column; gap: 12px; }
-      .instrument-item { padding: 12px; border: 1px solid #f0f0f0; border-radius: 6px; }
+      .instrument-item { padding: 12px; margin-bottom: 0; }
       .instrument-item h3 { font-size: 14px; }
-      .instrument-item p { font-size: 11px; margin-bottom: 10px; }
+      .instrument-item p { font-size: 12px; margin-bottom: 10px; }
       .btn-trade { padding: 9px 16px; font-size: 12px; }
       .pro-section { padding: 24px 0 32px; }
       .pro-section h2 { font-size: 20px; margin-bottom: 12px; }
@@ -779,8 +779,9 @@
       .stat-card-number { font-size: 30px; }
       .stat-card-title { font-size: 12px; }
       .instruments-section ul { display: flex; flex-direction: column; gap: 13px; }
-      .instrument-item { padding: 13px; }
+      .instrument-item { padding: 13px; margin-bottom: 0; }
       .instrument-item h3 { font-size: 14px; }
+      .instrument-item p { font-size: 12px; }
       .pro-section h2 { font-size: 22px; }
       .pro-section .btn-primary { width: 100%; max-width: 250px; }
       .footer-top { display: flex; flex-direction: column; gap: 13px; padding: 13px; }
@@ -817,8 +818,9 @@
       .stat-card { width: 100%; margin-left: 0 !important; margin-bottom: 0 !important; margin-right: 0 !important; }
       .stat-card-number { font-size: 32px; }
       .instruments-section ul { display: flex; flex-direction: column; gap: 14px; }
-      .instrument-item { padding: 14px; }
+      .instrument-item { padding: 14px; margin-bottom: 0; }
       .instrument-item h3 { font-size: 15px; }
+      .instrument-item p { font-size: 12px; }
       .pro-section h2 { font-size: 24px; }
       .pro-section .btn-primary { width: 100%; max-width: 260px; }
       .footer-top { display: flex; flex-direction: column; gap: 14px; padding: 14px; }
@@ -854,7 +856,7 @@
       .stat-card:nth-child(3) { margin-left: 10%; }
       .stat-card:nth-child(4) { margin-left: 15%; margin-bottom: 0; }
       .instruments-section ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      .instrument-item { border-bottom: none; border: 1px solid #f0f0f0; border-radius: 8px; padding: 20px; }
+      .instrument-item { padding: 20px; margin-bottom: 0; }
       .pro-section h2 { font-size: 32px; }
       .footer-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 32px 16px; }
       .footer-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 0 16px; }
@@ -890,7 +892,8 @@
       .stat-card-number { font-size: 48px; }
       .stats-section::before { font-size: 620px; }
       .instruments-section { width: 100%; }
-      .instruments-section ul { grid-template-columns: repeat(3, 1fr); }
+      .instruments-section ul { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .instrument-item { padding: 24px; }
       .pro-section { width: 100%; }
       .pro-section h2 { font-size: 40px; }
       footer { width: 100%; }
