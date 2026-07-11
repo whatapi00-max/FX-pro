@@ -847,14 +847,14 @@
       .mobile-section-content { flex: 1; }
       .mobile-app-img { max-width: 320px; margin: 0; }
       .app-store-btns { flex-direction: row; }
-      .stats-section { padding: 40px 0; }
+      .stats-section { padding: 40px 16px; }
       .stats-section::before { font-size: 380px; }
-      .stats-section ul { display: block; max-width: 700px; margin: 0 auto; }
-      .stat-card { width: 85%; margin-bottom: -20px; }
-      .stat-card:nth-child(1) { margin-left: 0%; }
-      .stat-card:nth-child(2) { margin-left: 5%; }
-      .stat-card:nth-child(3) { margin-left: 10%; }
-      .stat-card:nth-child(4) { margin-left: 15%; margin-bottom: 0; }
+      .stats-section ul { max-width: 100%; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .stat-card { width: 100%; margin: 0 !important; }
+      .stat-card:nth-child(1) { margin-left: 0 !important; }
+      .stat-card:nth-child(2) { margin-left: 0 !important; }
+      .stat-card:nth-child(3) { margin-left: 0 !important; }
+      .stat-card:nth-child(4) { margin-left: 0 !important; }
       .instruments-section ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .instrument-item { padding: 20px; margin-bottom: 0; }
       .pro-section h2 { font-size: 32px; }
@@ -881,19 +881,20 @@
       .experience-section h2 { font-size: 30px; }
       .account-card { min-width: 180px; padding: 10px; }
       .mobile-section { width: 100%; }
-      .mobile-app-img { max-width: 420px; }
-      .stats-section { width: 100%; padding: 60px 16px; }
+      .mobile-app-img { max-width: 360px; }
+      .stats-section { width: 100%; padding: 60px 24px; }
       .stats-section .container { padding: 0; }
-      .stats-section ul { max-width: 900px; margin: 0 auto; }
-      .stat-card { width: 80%; min-height: 210px; margin-bottom: -30px; }
-      .stat-card:nth-child(2) { margin-left: 8%; }
-      .stat-card:nth-child(3) { margin-left: 16%; }
-      .stat-card:nth-child(4) { margin-left: 24%; }
-      .stat-card-number { font-size: 48px; }
-      .stats-section::before { font-size: 620px; }
+      .stats-section ul { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .stat-card { width: 100%; min-height: 180px; margin: 0 !important; }
+      .stat-card:nth-child(1) { margin-left: 0 !important; }
+      .stat-card:nth-child(2) { margin-left: 0 !important; }
+      .stat-card:nth-child(3) { margin-left: 0 !important; }
+      .stat-card:nth-child(4) { margin-left: 0 !important; }
+      .stat-card-number { font-size: 44px; }
+      .stats-section::before { font-size: 500px; }
       .instruments-section { width: 100%; }
-      .instruments-section ul { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-      .instrument-item { padding: 24px; }
+      .instruments-section ul { grid-template-columns: repeat(5, 1fr); gap: 20px; }
+      .instrument-item { padding: 20px; }
       .pro-section { width: 100%; }
       .pro-section h2 { font-size: 40px; }
       footer { width: 100%; }
