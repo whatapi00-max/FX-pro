@@ -562,32 +562,6 @@
     .app-store-btn .store-text { font-size: 9px; color: #aaa; }
     .app-store-btn .store-name { font-size: 13px; font-weight: 700; }
 
-    /* ===== STATS SECTION ===== */
-    .stats-section { padding: 48px 0; width: 100%; background: #000; }
-    .stats-section .container { padding: 0 16px; }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-    .stat-card {
-      background: linear-gradient(135deg, #001240 0%, #0044cc 100%);
-      border-radius: 12px;
-      padding: 24px;
-      color: #fff;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    }
-    .stat-card:nth-child(2) { background: linear-gradient(135deg, #001540 0%, #0055dd 100%); }
-    .stat-card:nth-child(3) { background: linear-gradient(135deg, #001240 0%, #0040bb 100%); }
-    .stat-card:nth-child(4) { background: linear-gradient(135deg, #000e30 0%, #003299 100%); }
-    .stat-icon { font-size: 36px; margin-bottom: 12px; }
-    .stat-number { font-size: 36px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 4px; }
-    .stat-label { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 8px; }
-    .stat-card p { font-size: 13px; color: #aab8d0; line-height: 1.5; }
-
     /* ===== TRADING INSTRUMENTS ===== */
     .instruments-section { padding: 48px 0; width: 100%; background: #fff; }
     .instruments-section .container { padding: 0 16px; }
@@ -709,8 +683,6 @@
       .btn-primary, .btn-secondary { width: auto; min-width: 200px; }
       .account-types { justify-content: center; }
       .account-card { min-width: 180px; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .stat-number { font-size: 42px; }
       .instruments-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
     }
 
@@ -736,10 +708,6 @@
       .mobile-app-img { max-width: 280px; margin: 0; }
       .app-store-btns { flex-direction: row; flex-wrap: wrap; }
       .app-store-btn { width: auto; }
-      .stats-section { padding: 56px 0; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-      .stat-card { padding: 28px; }
-      .stat-number { font-size: 44px; }
       .instruments-section { padding: 56px 0; }
       .instruments-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
       .instrument-card { padding: 22px; }
@@ -767,10 +735,6 @@
       .account-types { grid-template-columns: repeat(3, 1fr); gap: 20px; }
       .account-card { padding: 16px; }
       .mobile-app-img { max-width: 320px; }
-      .stats-section { padding: 64px 0; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1000px; }
-      .stat-card { padding: 32px; }
-      .stat-number { font-size: 48px; }
       .instruments-section { padding: 64px 0; }
       .instruments-grid { grid-template-columns: repeat(5, 1fr); gap: 20px; }
       .instrument-card { padding: 22px; }
@@ -782,8 +746,6 @@
     /* Large Desktop (1280px+) */
     @media (min-width: 1280px) {
       .container { padding: 0 24px; }
-      .stats-grid { grid-template-columns: repeat(4, 1fr); max-width: 1280px; }
-      .stat-card { padding: 36px; }
       .instruments-grid { grid-template-columns: repeat(5, 1fr); gap: 24px; }
       .instrument-card { padding: 24px; }
     }
