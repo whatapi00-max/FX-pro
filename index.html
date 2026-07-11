@@ -552,6 +552,47 @@
       width: 100%; max-width: 260px; margin: 0 auto 20px;
       display: block;
     }
+    /* ===== TRADING MARKETS ===== */
+    .markets-section { padding: 48px 0; width: 100%; background: #f8f9fa; }
+    .markets-section .container { padding: 0 16px; }
+    .markets-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .market-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 24px;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
+    }
+    .market-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 4px 16px rgba(0,102,255,0.1);
+      transform: translateY(-2px);
+    }
+    .market-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 auto 16px;
+    }
+    .market-card h3 { font-size: 18px; font-weight: 800; color: #111; margin-bottom: 8px; }
+    .market-card p { font-size: 13px; color: #555; line-height: 1.5; }
+
     /* ===== FOOTER ===== */
     footer { background: #fff; padding: 0 0 20px; width: 100%; }
     .footer-nav, .footer-disclaimer { max-width: 1280px; margin: 0 auto; }
@@ -598,6 +639,7 @@
       .btn-primary, .btn-secondary { width: auto; min-width: 200px; }
       .account-types { justify-content: center; }
       .account-card { min-width: 180px; }
+      .markets-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
     }
 
     /* Tablets (768px+) */
@@ -620,6 +662,9 @@
       .mobile-section .container { display: flex; align-items: center; gap: 40px; text-align: left; }
       .mobile-section-content { flex: 1; }
       .mobile-app-img { max-width: 280px; margin: 0; }
+      .markets-section { padding: 56px 0; }
+      .markets-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .market-card { padding: 28px; }
       .footer-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
       .footer-nav-section { border-bottom: none; }
       .footer-nav-toggle { display: none; }
@@ -640,12 +685,17 @@
       .account-types { grid-template-columns: repeat(3, 1fr); gap: 20px; }
       .account-card { padding: 16px; }
       .mobile-app-img { max-width: 320px; }
+      .markets-section { padding: 64px 0; }
+      .markets-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .market-card { padding: 32px; }
       .footer-nav { grid-template-columns: repeat(4, 1fr); }
     }
 
     /* Large Desktop (1280px+) */
     @media (min-width: 1280px) {
       .container { padding: 0 24px; }
+      .markets-grid { grid-template-columns: repeat(6, 1fr); gap: 20px; }
+      .market-card { padding: 28px; }
     }
 
     /* ===== APP BANNER ===== */
@@ -1019,6 +1069,44 @@
         <p>Exclusive benefits with ultra-tight spreads, dedicated account manager, and premium features.</p>
         <a href="/contact" class="btn-open">Open Account</a>
       </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trading Markets -->
+  <section class="markets-section reveal">
+    <div class="container">
+      <div class="markets-grid">
+        <a href="/forex-trading" class="market-card">
+          <div class="market-icon" style="background:#0066ff;">FX</div>
+          <h3>Forex</h3>
+          <p>Trade 70+ currency pairs with competitive spreads</p>
+        </a>
+        <a href="/futures" class="market-card">
+          <div class="market-icon" style="background:#e74c3c;">F</div>
+          <h3>Futures</h3>
+          <p>Trade futures on major global indices and commodities</p>
+        </a>
+        <a href="/indices-trading" class="market-card">
+          <div class="market-icon" style="background:#00b050;">I</div>
+          <h3>Indices</h3>
+          <p>Access major indices from around the world</p>
+        </a>
+        <a href="/shares-cfd-trading" class="market-card">
+          <div class="market-icon" style="background:#8e44ad;">S</div>
+          <h3>Shares</h3>
+          <p>Trade thousands of company shares CFDs</p>
+        </a>
+        <a href="/commodity-trading" class="market-card">
+          <div class="market-icon" style="background:#d4af37;">C</div>
+          <h3>Commodities</h3>
+          <p>Trade Gold, Silver, Platinum and metals</p>
+        </a>
+        <a href="/crypto-trading" class="market-card">
+          <div class="market-icon" style="background:#f7931a;">₿</div>
+          <h3>Crypto</h3>
+          <p>Trade Bitcoin, Ethereum and altcoin CFDs</p>
+        </a>
       </div>
     </div>
   </section>
